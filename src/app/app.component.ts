@@ -55,5 +55,11 @@ export class AppComponent {
       price: 80000,
       description: 'bla bla bla bla bla',
     },
-  ]
+  ];
+
+  // FIXME: USO DE INPUTS Y OUTPUTS
+  clickProduct (id: number) {
+    console.log('product');
+    console.log(id);
+  }
 }

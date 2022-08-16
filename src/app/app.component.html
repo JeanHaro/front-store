@@ -17,5 +17,11 @@
   <p *ngSwitchDefault>No hay match</p>
 </div>
 
-<!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
-<app-product></app-product>
+
+<div *ngFor="let product of products">
+  <!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
+  <!-- FIXME: USO DE INPUTS Y OUTPUTS -->
+  <!-- TODO: (productClicked) es un Output -->
+  <!-- TODO: [product] es un Input -->
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+</div>
