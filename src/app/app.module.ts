@@ -6,9 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//  FIXME: QUE SON LOS COMPONENTES Y DECORADORES
+// TODO: Componentes - Para que Angular reconozca que es un componente como parte de su aplicación
+import { ProductComponent } from './components/product.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
