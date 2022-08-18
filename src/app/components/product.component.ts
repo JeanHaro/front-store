@@ -4,7 +4,7 @@
 /* TODO: Un decorador es la manera en que Angular pueda saber que esta clase que tipo de error va a cumplir, si va a ser
 un componente, si va ser un servicio, si va ser un pype, en este caso como vamos hacer un componente vamos a usar 
 el decorador Component */
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 
 // Modelo
 import { Product } from "../product.model";
@@ -20,7 +20,7 @@ import { Product } from "../product.model";
     templateUrl: './product.component.html',
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnChanges, OnInit, DoCheck {
     // Variable tipo Product (Interfaz)
     // FIXME: USO DE INPUTS Y OUTPUTS
     // TODO: Automáticamente el componente que tenemos va a recibir una propiedad desde otro componente
@@ -33,5 +33,36 @@ export class ProductComponent {
         // TODO: Como es any es cualquier valor o tipo, si es number pide número, etc.
         // TODO: Emitirá el id del producto
         this.productClicked.emit(this.product.id);
+    }
+
+    // FIXME: CICLO DE VIDA DE LOS COMPONENTES
+    /* TODO: Acá es donde se construye nuestro elemento o nuestro productComponent y Angular hace referencia a el y lo 
+    pone en interfaz */
+    constructor() {
+        console.log('1, constructor');
+    }
+
+    // TODO: Se encarga de detectar los cambios, cambios anteriores y nuevos
+    ngOnChanges (changes: SimpleChanges) {
+        console.log('2, ngOnChanges');
+        console.log(changes);
+    }
+
+    // TODO: Se ejecuta solo una vez y es cuando el componente ya esté puesto en pantalla
+    ngOnInit() {
+        console.log('3, ngOnInit');
+    }
+
+    // TODO: ngOnChanges y ngDoCheck tienen un error de colisión, ya que los dos se encargan de detectar cambios
+    // TODO: ngOnChanges es nativa de Angular
+    // TODO: ngDoCheck puede ser la detección automática de cambios, pero a nuestra manera
+    // TODO: Se lo dejas a Angular o lo hacemos nosotros
+    ngDoCheck() {
+        console.log('4, DoCheck');
+    }
+
+    // Este evento solo se ejecuta cuando algún elemento es quitado o removido de la interfaz
+    ngOnDestroy() {
+        console.log('5, ngOnDestroy');
     }
 }
