@@ -1,0 +1,25 @@
+// FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
+:host {
+    background-color: #e4e1e1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1rem;
+    padding: 2rem 1rem;
+    margin: auto;
+
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1480px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

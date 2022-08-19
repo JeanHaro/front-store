@@ -4,7 +4,17 @@
 /* TODO: Un decorador es la manera en que Angular pueda saber que esta clase que tipo de error va a cumplir, si va a ser
 un componente, si va ser un servicio, si va ser un pype, en este caso como vamos hacer un componente vamos a usar 
 el decorador Component */
-import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { 
+    Component, 
+    DoCheck, 
+    EventEmitter, 
+    Input, 
+    Output, 
+    OnChanges, 
+    OnDestroy, 
+    OnInit, 
+    SimpleChanges 
+} from "@angular/core";
 
 // Modelo
 import { Product } from "../product.model";
@@ -18,9 +28,12 @@ import { Product } from "../product.model";
     selector: 'app-product',
     // TODO: A que archivo HTML vamos a llamar o que archivo esta enlazado a este componente
     templateUrl: './product.component.html',
+    // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
+    // Estilos
+    styleUrls: ['./product.component.scss']
 })
 
-export class ProductComponent implements OnChanges, OnInit, DoCheck {
+export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     // Variable tipo Product (Interfaz)
     // FIXME: USO DE INPUTS Y OUTPUTS
     // TODO: Automáticamente el componente que tenemos va a recibir una propiedad desde otro componente

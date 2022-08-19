@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+// FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+// Global
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+.contenido {
+    max-width: 180rem;
+    min-width: 28rem;
+}
+
+.button {
+    border: none;
+    outline: none;
+    display: block;
+    margin: auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+}

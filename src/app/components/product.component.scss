@@ -1,0 +1,50 @@
+// FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
+// TODO: host - hará referencia al div (app-product) que cubre a los elementos del HTML
+:host {
+    margin: 0.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+    border: 0.5rem solid #f0f0f0;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+:host:hover {
+    border: 0.5rem solid rgb(70, 68, 68);
+}
+
+h3 {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+img {
+    // TODO: Los estilos que están acá solo van a tener dominio en este componente Product
+    max-width: 100%;
+    height: 18rem;
+    object-fit: cover;
+}
+
+strong {
+    text-align: center;
+    display: block;
+    margin: 2rem 0;
+}
+
+.product__button {
+    width: 100%;
+
+    .btn-green {
+        background-color: rgb(161, 212, 84);
+        transition: 0.5s ease;
+    }
+    
+    .btn-green:hover {
+        background-color: rgb(125, 172, 71);
+    }
+}

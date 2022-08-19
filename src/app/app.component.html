@@ -1,27 +1,31 @@
 <!-- FIXME: USO DE ngFor PARA RECORRER OBJETOS -->
-<div *ngFor="let product of products">
+<!-- <div *ngFor="let product of products">
   {{ product.title }}
   <img [src]="product.image" alt="">
   {{ product.price }}
-</div>
+</div> -->
 
 <!-- TODO: Para que funcione el ngModel se necesita importa el "FormsModule" en el app.module -->
-<input type="text" [(ngModel)]="title">
+<!-- <input type="text" [(ngModel)]="title"> -->
 <!-- FIXME: USO DE ngSwitch -->
-<!-- Si el title es de valor jean, aparecerá el primer párrafo, si es julian el segundo párrafo -->
-<div [ngSwitch]="title">
+<!-- TODO: Si el title es de valor jean, aparecerá el primer párrafo, si es julian el segundo párrafo -->
+<!-- TODO: Si title no es ninguno de los case de arriba, se mostrará el contenido por default -->
+<!-- <div [ngSwitch]="title">
   <p *ngSwitchCase="'jean'">Este es Jean</p>
   <p *ngSwitchCase="'julian'">Este es Julian</p>
   <p *ngSwitchCase="'camilo'">Este es Camilo</p>
-  <!-- Si title no es ninguno de los case de arriba, se mostrará el contenido por default -->
   <p *ngSwitchDefault>No hay match</p>
-</div>
+</div> -->
 
-
-<div *ngFor="let product of products">
+<!-- FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS -->
+<div class="product-grid contenido">
   <!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
   <!-- FIXME: USO DE INPUTS Y OUTPUTS -->
   <!-- TODO: (productClicked) es un Output -->
   <!-- TODO: [product] es un Input -->
-  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+  <app-product 
+    *ngFor="let product of products"
+    (productClicked)="clickProduct($event)" 
+    [product]="product"
+  ></app-product>
 </div>
