@@ -1,0 +1,12 @@
+<!-- FIXME: CREANDO RUTAS EN ANGULAR -->
+<div class="product-grid contenido">
+    <!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
+    <!-- FIXME: USO DE INPUTS Y OUTPUTS -->
+    <!-- TODO: (productClicked) es un Output -->
+    <!-- TODO: [product] es un Input -->
+    <app-product 
+        *ngFor="let product of products"
+        (productClicked)="clickProduct($event)" 
+        [product]="product"
+    ></app-product>
+</div>
