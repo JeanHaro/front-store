@@ -62,4 +62,7 @@ export class AppComponent {
     console.log('product');
     console.log(id);
   }
+
+  // FIXME: CONSTRUYENDO UN PROPIO PIPE
+  power = 10;
 }

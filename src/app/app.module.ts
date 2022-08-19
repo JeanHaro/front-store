@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 // TODO: Componentes - Para que Angular reconozca que es un componente como parte de su aplicación
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
+import { ExponentialPipe } from './exponential.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
+    ExponentialPipe
   ],
   imports: [
     BrowserModule,

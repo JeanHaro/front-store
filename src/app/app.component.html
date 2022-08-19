@@ -29,3 +29,8 @@
     [product]="product"
   ></app-product>
 </div>
+
+<!-- FIXME: CONSTRUYENDO UN PROPIO PIPE -->
+<input type="text" [(ngModel)]="power">
+<!-- TODO: nuestro pipe creado -->
+{{ power | exponential }}
