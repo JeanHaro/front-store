@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 //  FIXME: QUE SON LOS COMPONENTES Y DECORADORES
 // TODO: Componentes - Para que Angular reconozca que es un componente como parte de su aplicación
 import { ProductComponent } from './components/product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

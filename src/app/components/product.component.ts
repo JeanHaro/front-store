@@ -74,7 +74,11 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         console.log('4, DoCheck');
     }
 
-    // Este evento solo se ejecuta cuando algún elemento es quitado o removido de la interfaz
+    // TODO: Este evento solo se ejecuta cuando algún elemento es quitado o removido de la interfaz
+    /* TODO: Cuando queremos hacer desuscripciones a datos, tengamos una suscripción viva de datos, remover y 
+    eliminar bucles de memoria que podríamos llegar a tener, para apagar cualquier cosa dentro de nuestro 
+    componente lo podríamos utilizar porque ya se está removiendo la interfaz, esto podría limpiar procesos
+    de memoria, no construyendo una mala práctica */
     ngOnDestroy() {
         console.log('5, ngOnDestroy');
     }
