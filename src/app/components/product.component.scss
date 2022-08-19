@@ -33,11 +33,16 @@ img {
 strong {
     text-align: center;
     display: block;
-    margin: 2rem 0;
+    margin: 1rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 .product__button {
     width: 100%;
+    margin-top: 0.5rem;
 
     .btn-green {
         background-color: rgb(161, 212, 84);

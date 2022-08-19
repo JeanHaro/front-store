@@ -1,7 +1,9 @@
 <!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
 <!-- TODO: Traemos valores del Objeto -->
 <div>
-    <h3>{{ product.title }}</h3>
+    <!-- FIXME: USANDO LOS PIPES DE ANGULAR -->
+    <!-- TODO: uppercase - es un pipe -->
+    <h3>{{ product.title | uppercase }}</h3>
 </div>
 
 <div>
@@ -10,7 +12,20 @@
 </div>
 
 <div>
-    <strong>{{ product.price }}</strong>
+    <!-- TODO: currency - automáticamente le va a colocar un signo pesos con sus decimales -->
+    <strong>{{ product.price | currency }}</strong>
+</div>
+
+<div>
+    <!-- TODO: slice - es un pipe para cortar texto, cortará desde el 0 hasta el 10 caracteres -->
+    <p>{{ product.description | slice:0:10 }}</p>
+</div>
+
+<div>
+    <!-- TODO: date - es para mostrar mejor la fecha como por ejemp: "Aug 19, 2022" -->
+    <!-- TODO: date:'medium' - es para mostrar la fecha y la hora como por ejem: "Aug 19, 2022, 1:42:10 PM" -->
+    <!-- TODO: date:'HH:mm' - es para mostrar solo la hora, como por ejemp: "13:43" -->
+    <p>{{ today | date:'HH:mm' }}</p>
 </div>
 
 <div class="product__button">

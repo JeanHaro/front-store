@@ -82,4 +82,8 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     ngOnDestroy() {
         console.log('5, ngOnDestroy');
     }
+
+    // FIXME: USANDO LOS PIPES DE ANGULAR
+    // Fecha actual
+    today = new Date();
 }
