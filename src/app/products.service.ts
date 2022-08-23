@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-// FIXME: CREANDO RUTAS EN ANGULAR
-// TODO: Interface
-import { Product } from "../product.model";
+// FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
+// TODO: Interfaces
+import { Product } from './product.model';
 
-@Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class ProductsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void { }
+export class ProductsService {
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
   // TODO: Productos
@@ -62,9 +56,17 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  // FIXME: USO DE INPUTS Y OUTPUTS
-  clickProduct (id: number) {
-    console.log('product');
-    console.log(id);
+  constructor() { }
+
+  // TODO: Método que te devuelve todos los productos
+  getAllProducts() {
+    return this.products;
+  }
+
+  // TODO: Recibe el id del producto que queremos buscar
+  getProduct (id: string) {
+    // TODO: find - es para encontrar un valor, donde se manda una función
+    // TODO: Si el id coincide con el item.id, ese será el producto que les va a devolver
+    return this.products.find(item => id === item.id);
   }
 }
