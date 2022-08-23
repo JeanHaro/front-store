@@ -1,0 +1,37 @@
+// FIXME: USANDO routerLink Y routerActive
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    background-color: #5C80BC;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+    color: #ffffff;
+    font-family: var(--fuenteLogo);
+    letter-spacing: 0.3rem;
+}
+
+nav > a {
+    padding: 1.5rem 2.5rem;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: 0.5s ease;
+    margin-left: 1rem;
+}
+
+nav > a:hover {
+    background-color: #2a5fbb;
+}
+
+nav > a.active {
+    background-color: #2a5fbb;
+}
