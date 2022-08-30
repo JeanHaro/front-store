@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 // FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
 // TODO: Interfaces
-import { Product } from './product.model';
+import { Product } from 'src/app/product.model'; 
 
 @Injectable({
   providedIn: 'root'

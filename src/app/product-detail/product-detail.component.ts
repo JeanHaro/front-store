@@ -5,8 +5,9 @@ import { Component, OnInit } from '@angular/core';
 // TODO: Params - es de tipado
 import { ActivatedRoute, Params } from '@angular/router';
 
+// FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 // TODO: Servicios
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../core/services/products/products.service';
 
 // FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO
 // TODO: Interfaces
