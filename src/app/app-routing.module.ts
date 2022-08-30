@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 // Componentes
-import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
@@ -37,7 +36,12 @@ const routes: Routes = [
         // TODO: Enlazar componentes
         /* TODO: Es una manera, también podríamos empezar a crear rutas por cada uno de los 
         componentes de nuestra página */
-        component: HomeComponent
+        // component: HomeComponent
+        
+        // FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
+        // TODO: Cargar un módulo dinámicamente
+        // TODO: then - nos dará una promesa, nos va a devolver el módulo del HomeModule
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'products',
@@ -68,7 +72,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    // TODO: Estrategia de precarga
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

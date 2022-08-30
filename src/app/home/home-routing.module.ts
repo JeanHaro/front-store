@@ -2,7 +2,18 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
 
-const routes: Routes = [];
+// FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
+// Componentes
+import { HomeComponent } from "./components/home/home.component";
+
+const routes: Routes = [
+    // Ruta inicial
+    // TODO: Es el elemento inicial con el que va a iniciar el módulo
+    {
+        path: '',
+        component: HomeComponent
+    }
+];
 
 @NgModule({
     // TODO: Tiene metadata que son las rutas
