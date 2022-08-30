@@ -54,7 +54,7 @@ export class ProductsComponent implements OnInit {
       description: 'bla bla bla bla bla',
     },
     {
-      id: '4',
+      id: '6',
       image: 'assets/images/stickers2.png',
       title: 'Stickers',
       price: 80000,

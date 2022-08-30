@@ -33,4 +33,7 @@
 <div class="product__button">
     <!-- TODO: (click) - evento click, cuando hacemos click realizará la función o método que se le otorgó -->
     <button class="button btn-green" (click)="addCart()">Agregar al carrito</button>
+    <!-- FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO -->
+    <!-- TODO: La primera parte será products, y la segunda es para concatenar el product.id con el /products -->
+    <a class="button btn-green" [routerLink]="['/products', product.id]">Ver detalle</a>
 </div>

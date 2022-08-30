@@ -1,9 +1,5 @@
 // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
 // FIXME: CREANDO RUTAS EN ANGULAR
-:host {
-    background-color: #e4e1e1;
-}
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

@@ -8,6 +8,14 @@ import { ActivatedRoute, Params } from '@angular/router';
 // TODO: Servicios
 import { ProductsService } from '../products.service';
 
+// FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO
+// TODO: Interfaces
+import { Product } from '../product.model';
+
+// TODO: Font Awesome
+import { definition } from '@fortawesome/free-regular-svg-icons/faHeart' 
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -15,7 +23,12 @@ import { ProductsService } from '../products.service';
 })
 export class ProductDetailComponent implements OnInit {
 
+  product!: Product;
+
   constructor (private route: ActivatedRoute, private productService: ProductsService) { }
+
+  // Icono
+  faHeart = definition;
 
   // TODO: Recibir dato
   ngOnInit(): void {
@@ -28,8 +41,14 @@ export class ProductDetailComponent implements OnInit {
       // console.log(id);
       // TODO: Lo guardamos en una variable constante product
       // TODO: Verifica si es el id en los servicios
-      const product = this.productService.getProduct(id);
-      console.log(product);
+      // TODO: ! - colocamos ese signo para darle un valor por default y corra la aplicación 
+      this.product = this.productService.getProduct(id)!;
+      // console.log(product);
     })
+  }
+
+  activeFavorite() {
+    (this.faHeart != definition) ? this.faHeart = definition : this.faHeart = faHeart;
+
   }
 }

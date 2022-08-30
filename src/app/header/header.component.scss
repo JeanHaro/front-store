@@ -1,4 +1,4 @@
-// FIXME: USANDO routerLink Y routerActive
+// FIXME: USANDO routerLink Y routerActive 
 .header {
     position: sticky;
     top: 0;
@@ -8,31 +8,90 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 1rem;
+
     background-color: #5C80BC;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
-}
+    padding: 1.5rem 1rem;
+    z-index: 2;
 
-.header h1 {
-    color: #ffffff;
-    font-family: var(--fuenteLogo);
-    letter-spacing: 0.3rem;
-    cursor: pointer;
-}
+    // Titulo
+    .header__title {    
+        h1 {
+            font-family: var(--fuenteLogo);
+            letter-spacing: 0.3rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    }
 
-nav > a {
-    padding: 1.5rem 2.5rem;
-    color: #ffffff;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    transition: 0.5s ease;
-    margin-left: 1rem;
-}
+    // Iconos y Enlace
+    .header__nav {
+        .header__nav-icon {
+            @media (min-width: 768px) {
+                display: none;
+                visibility: hidden;
+            }
 
-nav > a:hover {
-    background-color: #2a5fbb;
-}
+            fa-icon {
+                color: #ffffff;
+                font-size: 1.8rem;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
 
-nav > a.active {
-    background-color: #2a5fbb;
+                &:hover {
+                    background-color: #2d5aa7;
+                }
+            }
+        }
+
+        // Enlaces
+        nav {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 100%;
+            right: 200%;
+            width: 100%;
+            background-color: rgba(92, 127, 188, 0.95);
+            padding: 1.5rem;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+
+            @media (min-width: 768px) {
+                position: relative;
+                top: 0;
+                right: 0;
+                padding: 0;
+                box-shadow: none;
+                flex-direction: row;
+            }
+            
+            // Enlace
+            a {
+                text-align: center;
+                padding: 1.5rem;
+                color: #ffffff;
+                border-radius: 0.5rem;
+                margin-bottom: 1rem;
+                transition: 0.5s ease;
+
+                @media (min-width: 768px) {
+                    margin-bottom: 0;
+                    margin-right: 1rem;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }    
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                
+                &:hover {
+                    background-color: #2d5aa7;
+                }
+            }
+        }
+    }
 }

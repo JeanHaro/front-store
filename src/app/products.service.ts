@@ -17,7 +17,7 @@ export class ProductsService {
       image: 'assets/images/camiseta.png',
       title: 'Camiseta',
       price: 80000,
-      description: 'bla bla bla bla bla',
+      description: 'bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla',
     },
     {
       id: '2',
@@ -48,7 +48,7 @@ export class ProductsService {
       description: 'bla bla bla bla bla',
     },
     {
-      id: '4',
+      id: '6',
       image: 'assets/images/stickers2.png',
       title: 'Stickers',
       price: 80000,

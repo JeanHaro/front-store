@@ -1,11 +1,18 @@
 <!-- FIXME: USANDO routerLink Y routerActive -->
-<div class="header">
-    <h1 routerLink="/home">MiniTienda</h1>
-    
-    <nav>
-        <!-- TODO: routerLinkActive - se le coloca la clase que quiere que utilice cuando esté activo -->
-        <a routerLink="/home" routerLinkActive="active">Inicio</a>
-        <a routerLink="/products" routerLinkActive="active">Productos</a>
-        <a routerLink="/contact" routerLinkActive="active">Contacto</a>
-    </nav>
-</div>
+<div class="header min-width">
+    <div class="header__title">
+        <h1 routerLink="/home">MiniTienda</h1>
+    </div><!-- Titulo -->
+
+    <div class="header__nav">
+        <div class="header__nav-icon">
+            <fa-icon [icon]="faBars" (click)="barsActive()" id="icon-bar"></fa-icon>
+        </div><!-- Icono -->
+
+        <nav id="menu-bar"><!-- TODO: routerLinkActive - se le coloca la clase que quiere que utilice cuando esté activo -->
+            <a routerLink="/home" routerLinkActive="active">Inicio</a> <!-- Enlace -->
+            <a routerLink="/products" routerLinkActive="active">Productos</a>
+            <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+        </nav><!-- Enlaces -->
+    </div><!-- Icono y Enlaces -->
+</div><!-- Cabecera -->

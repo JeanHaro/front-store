@@ -1,0 +1,95 @@
+// Container de todo el entorno
+.product-detail {
+    @media (min-width: 500px) {
+        padding: 2rem 4rem;
+    }
+
+    // Contenedor del detalle del producto
+    .product-detail__container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+        padding: 2rem 1rem;
+        margin: auto;
+        background-color: #f0f0f0;
+        border-radius: 0.5rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 40% 60%;
+            padding: 3rem;
+        }
+
+        // Imagen
+        .product-detail__image {
+            @media (min-width: 768px) {
+                grid-row: 1 / 3; 
+
+                height: 100%;
+                border-right: 5px solid rgba(44, 43, 43, 0.2);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }     
+        }
+
+        // Información
+        .product-detail__information {
+            align-self: flex-start;
+            text-align: center;
+            padding: 1rem;
+
+            @media (min-width: 768px) {
+                text-align: left;
+                padding: 0 4rem 2rem;
+            }
+    
+            p {
+                margin-top: 1rem;
+            }
+    
+            // Descripción
+            .product-detail__description {
+                margin-top: 2rem;
+                text-align: left;
+    
+                p:first-child {
+                    font-weight: bold;
+                }
+
+                p:nth-child(2) {
+                    line-height: 2.5rem;
+                }
+            }
+        }
+    
+        // Botones
+        .product-detail__btn {
+            margin-top: 1rem;
+            padding: 1rem;
+            align-self: flex-end;
+
+            @media (min-width: 768px) {
+                grid-column: 2 / 3;
+                margin-top: 0;
+                padding: 0 4rem;
+            }
+
+            // Agregar a favoritos
+            .product-detail__favorite {
+                margin-bottom: 1rem;
+                
+                display: flex;
+                align-items: center;
+
+                fa-icon {
+                    color: #a1d454;
+                    cursor: pointer;
+                    font-size: 2rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }    
+}
+

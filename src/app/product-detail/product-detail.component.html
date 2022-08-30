@@ -1,1 +1,31 @@
-<p>product-detail works!</p>
+<app-header></app-header><!-- Cabecera -->
+
+<!-- FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO -->
+<div class="product-detail">
+    <div class="product-detail__container min-width max-width-140">
+        <div class="product-detail__image">
+            <img [src]="product.image" alt="">
+        </div><!-- Imagen -->
+        
+        <div class="product-detail__information">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | currency }}</p>
+        
+            <div class="product-detail__description">
+                <p>Descripción:</p>
+                <p>{{ product.description }}</p>
+            </div><!-- Descripción -->
+        </div><!-- Información -->
+    
+        <div class="product-detail__btn">
+            <div class="product-detail__favorite">
+                <fa-icon [icon]="faHeart" (click)="activeFavorite()"></fa-icon>
+                Añadir a favoritos
+            </div><!-- Agregar a favoritos -->
+
+            <button class="button btn-green">Agregar al carrito</button>
+        </div><!-- Botones -->
+    </div><!-- Contenedor del detalle del producto -->
+</div><!-- Container de todo el entorno -->
+
+<app-footer></app-footer><!-- Pie de página -->
