@@ -1,3 +1,4 @@
+// FIXME: PREPARAR EL PROYECTO PARA LAZY LOADING
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // Para que funcione el [ngModel]
@@ -16,13 +17,11 @@ import { HighlightDirective } from './highlight.directive';
 // TODO: Componentes - Para que Angular reconozca que es un componente como parte de su aplicación
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { BannerComponent } from './banner/banner.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
@@ -37,13 +36,11 @@ import { LayoutComponent } from './layout/layout.component';
     CartComponent,
     ExponentialPipe,
     HighlightDirective,
-    HomeComponent,
     ProductsComponent,
     ContactComponent,
     DemoComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent,
     PageNotFoundComponent,
     ProductDetailComponent,
     LayoutComponent
