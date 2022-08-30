@@ -9,42 +9,52 @@ import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
+// FIXME: CREANDO EL MÓDULO DEL WEBSITE CON VISTAS ANIDADAS
+// Layout
+import { LayoutComponent } from './layout/layout.component';
 
 // FIXME: CREANDO RUTAS EN ANGULAR
-// TODO: Creando rutas en el Array
+// TODO: Creando rutas en el Array vacío []
 const routes: Routes = [
-  // FIXME: USANDO routerLink Y routerActive
   {
-    // TODO: Si no tiene PATH
     path: '',
-    // TODO: Redirección
-    redirectTo: '/home',
-    // TODO: Cuando tengamos la URL en seco, sin ningún path
-    pathMatch: 'full'
+    // TODO: Que este componente tenga un Layout
+    component: LayoutComponent,
+    // TODO: Hijos del layout
+    children: [
+      {
+        // TODO: Cuando no haya path, redireccione al home
+        path: '',
+        // TODO: Redirección
+        redirectTo: '/home',
+        // TODO: Cuando tengamos la url en seco, sin ningún path
+        pathMatch: 'full',
+      },
+       // TODO: Una ruta es un objeto
+      {
+        // TODO: La página de la ruta
+        path: 'home',
+        // TODO: Enlazar componentes
+        /* TODO: Es una manera, también podríamos empezar a crear rutas por cada uno de los 
+        componentes de nuestra página */
+        component: HomeComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
+      },
+      {
+        // FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
+        path: 'products/:id',
+        component: ProductDetailComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+    ]
   },
-
-  // TODO: Una ruta es un objeto
-  {
-    // TODO: La página de la ruta
-    path: 'home',
-    // TODO: Enlazar componentes
-    /* TODO: Es una manera, también podríamos empezar a crear rutas por cada uno de los 
-    componentes de nuestra página */
-    component: HomeComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent
-  },
-  {
-    // FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
-    path: 'products/:id',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
+  // FIXME: USANDO routerLink Y routerActive
   {
     path: 'demo',
     component: DemoComponent

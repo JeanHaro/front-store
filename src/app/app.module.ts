@@ -28,6 +28,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 // Modulos
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     BannerComponent,
     PageNotFoundComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
