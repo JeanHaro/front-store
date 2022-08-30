@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
 
-    background-color: #5C80BC;
+    background-color: #102850;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
     padding: 1.5rem 1rem;
     z-index: 2;
@@ -40,7 +40,8 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #2d5aa7;
+                    color: #102850;
+                    background-color: #ffffff;
                 }
             }
         }
@@ -62,6 +63,7 @@
                 top: 0;
                 right: 0;
                 padding: 0;
+                background-color: transparent;
                 box-shadow: none;
                 flex-direction: row;
             }
@@ -69,7 +71,7 @@
             // Enlace
             a {
                 text-align: center;
-                padding: 1.5rem;
+                padding: 1.5rem 2rem;
                 color: #ffffff;
                 border-radius: 0.5rem;
                 margin-bottom: 1rem;
@@ -89,7 +91,8 @@
                 }
                 
                 &:hover {
-                    background-color: #2d5aa7;
+                    background-color: #ffffff;
+                    color: #102850;
                 }
             }
         }

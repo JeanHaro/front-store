@@ -27,12 +27,14 @@ export class HeaderComponent implements OnInit {
 
     if (this.faBars !== faBars) {
       this.faBars = faBars;
-      iconBar?.classList.remove('color-red');
+      iconBar?.classList.remove('background-red');
+      iconBar?.classList.remove('color-white');
       menuBar?.classList.remove('right-0');
       menuBar?.classList.remove('transition');
     }  else {
       this.faBars = faClose;
-      iconBar?.classList.add('color-red');
+      iconBar?.classList.add('background-red');
+      iconBar?.classList.add('color-white');
       menuBar?.classList.add('right-0');
       menuBar?.classList.add('transition');
     }

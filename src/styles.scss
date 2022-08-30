@@ -1,8 +1,8 @@
 // FIXME: USANDO routerLink Y routerActive
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 :root {
-    --fuenteLogo: 'Mitr', sans-serif;
+    --fuenteLogo: 'Secular One', sans-serif;
 }
 
 // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
@@ -84,12 +84,16 @@ img {
     min-width: 28rem;
 }
 
-.color-red {
+.background-red {
     background-color: #ca3e3e;
 
     &:hover {
         background-color: #a53737 !important;
     }
+}
+
+.color-white {
+    color: #ffffff !important;
 }
 
 .right-0 {
