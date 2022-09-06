@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-// Componentes
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { LoginComponent } from './login/login.component';
-
 // FIXME: CREANDO EL MÓDULO DEL WEBSITE CON VISTAS ANIDADAS
 // Layout
 import { LayoutComponent } from './layout/layout.component';
@@ -50,34 +42,29 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
-      },
-      {
-        // FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
-        path: 'products/:id',
-        component: ProductDetailComponent
+        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
       },
       {
         path: 'contact',
-        component: ContactComponent
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
         path: 'login',
         canActivate: [AdminGuard],
-        component: LoginComponent
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]
   },
   // FIXME: USANDO routerLink Y routerActive
   {
     path: 'demo',
-    component: DemoComponent
+    loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
   },
   {
     // FIXME: USANDO routerLink Y routerActive
     // TODO: Con doble asterisco es que no hubo match y mostrará el componente page-not-found
     path: '**',
-    component: PageNotFoundComponent
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 

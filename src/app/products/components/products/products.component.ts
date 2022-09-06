@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
 // FIXME: CREANDO RUTAS EN ANGULAR
-// Interface
-import { Product } from '../product.model';
+// TODO: Interface
+import { Product } from 'src/app/core/models/product.model';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class DemoComponent implements OnInit {
-
-  title = 'store';
+export class ProductsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
-  // Productos
-  products: Product[] = [{
+  // TODO: Productos
+  products: Product[] = [
+    {
       id: '1',
       image: 'assets/images/camiseta.png',
       title: 'Camiseta',
@@ -56,7 +54,7 @@ export class DemoComponent implements OnInit {
       description: 'bla bla bla bla bla',
     },
     {
-      id: '4',
+      id: '6',
       image: 'assets/images/stickers2.png',
       title: 'Stickers',
       price: 80000,
@@ -69,7 +67,4 @@ export class DemoComponent implements OnInit {
     console.log('product');
     console.log(id);
   }
-
-  // FIXME: CONSTRUYENDO UN PROPIO PIPE
-  power = 10;
 }

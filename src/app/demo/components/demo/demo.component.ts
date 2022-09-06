@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
 // FIXME: CREANDO RUTAS EN ANGULAR
-// TODO: Interface
-import { Product } from "../product.model";
+// Interface
+import { Product } from 'src/app/core/models/product.model';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class DemoComponent implements OnInit {
 
-  constructor() { }
+  // Variables serán renderizadas en ese template
+  // Se puede llamar desde el archivo app.component.html con String Interpolation
+  /* Las variables que tengamos acá, son variables que podemos mostrar o renderizar en nuestro archivo 
+  app.component.html */
+  title = 'store';
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
-  // TODO: Productos
-  products: Product[] = [
-    {
+  // Productos
+  products: Product[] = [{
       id: '1',
       image: 'assets/images/camiseta.png',
       title: 'Camiseta',
@@ -54,7 +58,7 @@ export class ProductsComponent implements OnInit {
       description: 'bla bla bla bla bla',
     },
     {
-      id: '6',
+      id: '4',
       image: 'assets/images/stickers2.png',
       title: 'Stickers',
       price: 80000,
@@ -67,4 +71,7 @@ export class ProductsComponent implements OnInit {
     console.log('product');
     console.log(id);
   }
+
+  // FIXME: CONSTRUYENDO UN PROPIO PIPE
+  power = 10;
 }

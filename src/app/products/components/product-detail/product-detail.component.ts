@@ -7,11 +7,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 // FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 // TODO: Servicios
-import { ProductsService } from '../core/services/products/products.service';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 
 // FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO
 // TODO: Interfaces
-import { Product } from '../product.model';
+import { Product } from 'src/app/core/models/product.model';
 
 // TODO: Font Awesome
 import { definition } from '@fortawesome/free-regular-svg-icons/faHeart' 

@@ -19,19 +19,6 @@
   <p *ngSwitchDefault>No hay match</p>
 </div>
 
-<!-- FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS -->
-<div class="product-grid contenido">
-    <!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
-    <!-- FIXME: USO DE INPUTS Y OUTPUTS -->
-    <!-- TODO: (productClicked) es un Output -->
-    <!-- TODO: [product] es un Input -->
-    <app-product 
-        *ngFor="let product of products"
-        (productClicked)="clickProduct($event)" 
-        [product]="product"
-    ></app-product>
-</div>
-
 <!-- FIXME: CONSTRUYENDO UN PROPIO PIPE -->
 <input type="text" [(ngModel)]="power">
 <!-- TODO: nuestro pipe creado -->
