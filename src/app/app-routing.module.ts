@@ -7,10 +7,15 @@ import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LoginComponent } from './login/login.component';
 
 // FIXME: CREANDO EL MÓDULO DEL WEBSITE CON VISTAS ANIDADAS
 // Layout
 import { LayoutComponent } from './layout/layout.component';
+
+// FIXME: GUARDIANES
+// Guardian
+import { AdminGuard } from './admin.guard';
 
 // FIXME: CREANDO RUTAS EN ANGULAR
 // TODO: Creando rutas en el Array vacío []
@@ -56,6 +61,11 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
+      {
+        path: 'login',
+        canActivate: [AdminGuard],
+        component: LoginComponent
+      }
     ]
   },
   // FIXME: USANDO routerLink Y routerActive

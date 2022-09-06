@@ -23,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CoreModule } from './core/core.module';
     DemoComponent,
     PageNotFoundComponent,
     ProductDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
