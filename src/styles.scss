@@ -7,8 +7,8 @@
 
 // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+    box-sizing: border-box !important;
+    font-size: 62.5% !important;
 }
 
 *, *::before, *::after {
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -24,33 +24,33 @@ body {
 }
 
 h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     font-family: sans-serif;
 }
 
 // Global
 h1 {
-    font-size: 3rem;
+    font-size: 3rem !important;
 
     @media (min-width: 768px) {
-        font-size: 4rem;
+        font-size: 4rem !important;
     }
 }
 
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.6rem !important;
 
     @media (min-width: 768px) {
-        font-size: 3.2rem;
+        font-size: 3.2rem !important;
     }
 }
 
 h3 {
-    font-size: 2.2rem;
+    font-size: 2.2rem !important;
 
     @media (min-width: 768px) {
-        font-size: 2.8;
+        font-size: 2.8 !important;
     }
 }
 
@@ -110,7 +110,7 @@ img {
     border-radius: 0.5rem;
     cursor: pointer;
     color: #ffffff;
-    font-weight: bold;
+    font-weight: 500;
     width: 100%;
 }
 
@@ -122,3 +122,10 @@ img {
 .btn-green:hover {
     background-color: rgb(125, 172, 71);
 }
+
+.btn-blue:hover {
+    background-color: #34418d;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -19,7 +19,8 @@
 
 h3 {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 0 !important;
+    font-weight: bold;
 }
 
 img {
@@ -35,7 +36,7 @@ strong {
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
 }
 
 .product__button {
