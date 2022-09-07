@@ -10,10 +10,15 @@
         </div><!-- Icono -->
 
         <nav id="menu-bar"><!-- TODO: routerLinkActive - se le coloca la clase que quiere que utilice cuando esté activo -->
-            <a routerLink="/home" routerLinkActive="active">Inicio</a> <!-- Enlace -->
-            <a routerLink="/products" routerLinkActive="active">Productos</a>
-            <a routerLink="/contact" routerLinkActive="active">Contacto</a>
-            <a routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+            <a mat-button class="btn-nav" routerLink="/home" routerLinkActive="active">Inicio</a> <!-- Enlace -->
+            <a mat-button class="btn-nav" routerLink="/products" routerLinkActive="active">Productos</a>
+            <a mat-button class="btn-nav" routerLink="/contact" routerLinkActive="active">Contacto</a>
+            <a mat-button class="btn-nav" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+            <!-- FIXME: CREANDO EL HEADER -->
+            <a mat-raised-button matBadge="4" matBadgeColor="warn" class="btn-green">
+                <mat-icon>shopping_cart</mat-icon>
+                <span>Carrito</span>
+            </a>
         </nav><!-- Enlaces -->
     </div><!-- Icono y Enlaces -->
 </div><!-- Cabecera -->

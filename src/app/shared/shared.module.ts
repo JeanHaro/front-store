@@ -15,6 +15,8 @@ import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 
 // Modulos
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// FIXME: CREANDO EL HEADER
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MaterialModule
   ],
   exports: [
     ExponentialPipe,

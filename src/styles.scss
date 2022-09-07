@@ -106,12 +106,13 @@ img {
     outline: none;
     display: block;
     margin: auto;
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 2rem !important;
     border-radius: 0.5rem;
     cursor: pointer;
     color: #ffffff;
     font-weight: 500;
     width: 100%;
+    font-size: 1.6rem !important;
 }
 
 .btn-green {
@@ -125,6 +126,17 @@ img {
 
 .btn-blue:hover {
     background-color: #34418d;
+}
+
+.btn-nav:hover {
+    background-color: #ffffff;
+    color: #102850 !important;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 html, body { height: 100%; }
