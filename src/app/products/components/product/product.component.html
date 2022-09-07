@@ -9,13 +9,13 @@
 </div>
 
 <div>
-    <!-- TODO: [src] - para obtener valores de las variables  -->
-    <img [src]="product.image" alt="" />
+    <!-- TODO: currency - automáticamente le va a colocar un signo pesos con sus decimales -->
+    <strong>{{ product.price | currency }}</strong>
 </div>
 
 <div>
-    <!-- TODO: currency - automáticamente le va a colocar un signo pesos con sus decimales -->
-    <strong>{{ product.price | currency }}</strong>
+    <!-- TODO: [src] - para obtener valores de las variables  -->
+    <img [src]="product.image" alt="" />
 </div>
 
 <div>
@@ -23,12 +23,12 @@
     <p>{{ product.description | slice:0:10 }}</p>
 </div>
 
-<div>
+<!-- <div> -->
     <!-- TODO: date - es para mostrar mejor la fecha como por ejemp: "Aug 19, 2022" -->
     <!-- TODO: date:'medium' - es para mostrar la fecha y la hora como por ejem: "Aug 19, 2022, 1:42:10 PM" -->
     <!-- TODO: date:'HH:mm' - es para mostrar solo la hora, como por ejemp: "13:43" -->
-    <p>{{ today | date:'HH:mm' }}</p>
-</div>
+    <!-- <p>{{ today | date:'HH:mm' }}</p>
+</div> -->
 
 <div class="product__button">
     <!-- TODO: (click) - evento click, cuando hacemos click realizará la función o método que se le otorgó -->

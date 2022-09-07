@@ -20,6 +20,7 @@
 h3 {
     text-align: center;
     padding: 2rem 0 !important;
+    padding-bottom: 0.5rem !important;
     font-weight: bold;
 }
 
@@ -27,6 +28,7 @@ img {
     // TODO: Los estilos que están acá solo van a tener dominio en este componente Product
     height: 18rem;
     object-fit: cover;
+    filter: drop-shadow(4px 4px 2px #2e2e2d);
 }
 
 strong {
@@ -36,7 +38,7 @@ strong {
 }
 
 p {
-    margin-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .product__button {

@@ -7,7 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 // FIXME: CREANDO EL HEADER
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
-
+// FIXME: ESTILOS A PRODUCT-CARD
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -18,7 +19,8 @@ import { MatBadgeModule } from '@angular/material/badge';
   exports: [
     MatButtonModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }
