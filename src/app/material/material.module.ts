@@ -9,18 +9,30 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 // FIXME: ESTILOS A PRODUCT-CARD
 import { MatCardModule } from '@angular/material/card';
+// FIXME: CREANDO VISTAS CON ANGULAR SHEMATIC
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }
