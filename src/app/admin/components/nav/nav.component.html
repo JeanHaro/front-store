@@ -1,17 +1,28 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav" fixedInViewport 
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="side_title">Menu</mat-toolbar><!-- Titulo -->
+
     <mat-nav-list>
-      <a mat-list-item routerLink="/admin/create">Crear producto</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
+      <a mat-list-item routerLink="/admin/create" routerLinkActive="active">
+        <fa-icon [icon]="faCirclePlus"></fa-icon> 
+        <span>Crear producto</span>
+      </a>
+
+      <a mat-list-item href="#"> 
+        <span>Link 2</span> 
+      </a>
+
+      <a mat-list-item href="#">
+        <span>Link 3</span>
+      </a>
+    </mat-nav-list><!-- Enlaces -->
+  </mat-sidenav><!-- Sidenav -->
+
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="header_admin">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -20,9 +31,13 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>store</span>
-    </mat-toolbar>
+
+      <h1>MiniTienda</h1><!-- Titulo -->
+    </mat-toolbar><!-- Cabecera -->
+    
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+    <div class="content-main">
+      <router-outlet></router-outlet>
+    </div><!-- Contenido -->
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container><!-- Contiene todo -->

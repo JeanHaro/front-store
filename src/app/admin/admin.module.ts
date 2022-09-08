@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Material Module
 import { MaterialModule } from '../material/material.module';
@@ -42,7 +43,8 @@ import { MaterialModule } from '../material/material.module';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FontAwesomeModule
   ]
 })
 export class AdminModule { }

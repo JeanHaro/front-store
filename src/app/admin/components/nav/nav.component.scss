@@ -1,17 +1,79 @@
+// Contiene todo
 .sidenav-container {
   height: 100%;
+
+  // Sidenav
+  .sidenav {
+    width: 200px;
+    background-color: #102850;
+    box-shadow: 4px 3px 2px rgba(0, 0, 0, 0.4);
+
+    // Titulo
+    .side_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 0.1rem solid #ffffff;
+      color: #ffff;
+      padding: 4rem;
+      background: inherit;
+    }
+
+    // Enlace
+    a {
+      color: #ffff;
+      height: 100%;
+      border-bottom: 5px solid #102850;
+      transition: 0.5s ease;
+
+      fa-icon {
+        margin-right: 1rem;
+        font-size: 3rem;
+      }
+
+      span {
+        display: inline-block;
+        padding: 2rem 0;
+      }
+
+      &:hover,
+      &.active {
+        background-color: #ffffff;
+        color: #102850;
+        border-radius: 4rem 0 0 4rem;
+      }
+    }
+  }
+
+  // Cabecera
+  .header_admin {
+    background-color: #ffffff;
+    color: #102850;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    padding: 4rem;
+    display: flex;
+    justify-content: space-around;
+
+    // Titulo
+    h1 {
+      font-family: var(--fuenteLogo);
+      letter-spacing: 0.3rem;
+      color: #102850;
+      flex-basis: 90%;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  // Contenido
+  .content-main {
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+      padding: 3rem;
+    }
+  }
 }
 
-.sidenav {
-  width: 200px;
-}
 
-.sidenav .mat-toolbar {
-  background: inherit;
-}
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
