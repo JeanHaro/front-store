@@ -1,6 +1,8 @@
 <!-- FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO -->
 <div class="product-detail">
-    <div class="product-detail__container min-width max-width-140">
+    <!-- FIXME: HACIENDO UNA SOLICITUD GET DESDE EL SERVICIO -->
+    <!-- TODO: Mientras que no exista un producto valido, que no sea nulo, que no intente renderizar algo que no tiene -->
+    <div class="product-detail__container min-width max-width-140" *ngIf="product">
         <div class="product-detail__image">
             <img [src]="product.image" alt="">
         </div><!-- Imagen -->

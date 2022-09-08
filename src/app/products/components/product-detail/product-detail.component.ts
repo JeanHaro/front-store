@@ -24,7 +24,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product!: Product | any;
+  product!: Product;
 
   constructor (private route: ActivatedRoute, private productService: ProductsService) { }
 
@@ -39,12 +39,21 @@ export class ProductDetailComponent implements OnInit {
       // TODO: Todos los parámetros que tenga ese componente
       // console.log(params);
       const id = params["id"];
+      // FIXME: HACIENDO UNA SOLICITUD GET DESDE EL SERVICIO
+      this.fetchProduct(id);
       // console.log(id);
       // TODO: Lo guardamos en una variable constante product
       // TODO: Verifica si es el id en los servicios
       // TODO: ! - colocamos ese signo para darle un valor por default y corra la aplicación 
-      this.product = this.productService.getProduct(id)!;
-      // console.log(product);
+      // this.product = this.productService.getProduct(id)!;
+    })
+  }
+
+  fetchProduct (id: string) {
+    this.productService.getProduct(id)
+    // Subscribirnos para recibir la respuesta
+    .subscribe(product => {
+      this.product = product;
     })
   }
 

@@ -7,9 +7,13 @@ import { HttpClient } from '@angular/common/http';
 // TODO: Interfaces
 import { Product } from 'src/app/core/models/product.model'; 
 
+// FIXME: HACIENDO UNA SOLICITUD GET DESDE EL SERVICIO
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductsService {
   constructor (private http: HttpClient) { }
 
@@ -64,7 +68,7 @@ export class ProductsService {
   getAllProducts() {
     // get - solicitar información
     // return this.products;
-    return this.http.get<Product[]>('http://platzi-store.herokuapp.com/products/');
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
 
   // TODO: Recibe el id del producto que queremos buscar
@@ -72,6 +76,6 @@ export class ProductsService {
     // TODO: find - es para encontrar un valor, donde se manda una función
     // TODO: Si el id coincide con el item.id, ese será el producto que les va a devolver
     // return this.products.find(item => id === item.id);
-    return this.http.get(`http://platzi-store.herokuapp.com/products/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
 }
