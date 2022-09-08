@@ -24,7 +24,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product!: Product;
+  product!: Product | any;
 
   constructor (private route: ActivatedRoute, private productService: ProductsService) { }
 
@@ -50,6 +50,5 @@ export class ProductDetailComponent implements OnInit {
 
   activeFavorite() {
     (this.faHeart != definition) ? this.faHeart = definition : this.faHeart = faHeart;
-
   }
 }

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 
+// FIXME: CREANDO NUESTROS PROPIOS SERVICIOS HTTP CLIENT
+import { HttpClient } from '@angular/common/http';
+
 // FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
 // TODO: Interfaces
 import { Product } from 'src/app/core/models/product.model'; 
@@ -8,10 +11,11 @@ import { Product } from 'src/app/core/models/product.model';
   providedIn: 'root'
 })
 export class ProductsService {
+  constructor (private http: HttpClient) { }
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
   // TODO: Productos
-  products: Product[] = [
+  /* products: Product[] = [
     {
       id: '1',
       image: 'assets/images/camiseta.png',
@@ -54,19 +58,20 @@ export class ProductsService {
       price: 80000,
       description: 'bla bla bla bla bla',
     },
-  ];
-
-  constructor() { }
+  ]; */
 
   // TODO: Método que te devuelve todos los productos
   getAllProducts() {
-    return this.products;
+    // get - solicitar información
+    // return this.products;
+    return this.http.get<Product[]>('http://platzi-store.herokuapp.com/products/');
   }
 
   // TODO: Recibe el id del producto que queremos buscar
   getProduct (id: string) {
     // TODO: find - es para encontrar un valor, donde se manda una función
     // TODO: Si el id coincide con el item.id, ese será el producto que les va a devolver
-    return this.products.find(item => id === item.id);
+    // return this.products.find(item => id === item.id);
+    return this.http.get(`http://platzi-store.herokuapp.com/products/${id}`);
   }
 }

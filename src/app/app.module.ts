@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 // Para que funcione el [ngModel]
 import { FormsModule } from '@angular/forms';
 
+// FIXME: CREANDO NUESTROS PROPIOS SERVICIOS: HTTP CLIENT 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -31,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     SharedModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

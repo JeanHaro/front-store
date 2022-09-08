@@ -4,6 +4,10 @@ import { Component, OnInit } from '@angular/core';
 // TODO: Interface
 import { Product } from 'src/app/core/models/product.model';
 
+// FIXME: CREANDO NUESTROS PROPIOS SERVICIOS HTTP CLIENT
+// TODO: Servicio
+import { ProductsService } from 'src/app/core/services/products/products.service';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,13 +15,18 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  // Productos
+  products: Product[] = [];
 
-  ngOnInit(): void { }
+  constructor (private productsService: ProductsService) { }
+
+  ngOnInit(): void { 
+    this.fetchProducts();
+  }
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
   // TODO: Productos
-  products: Product[] = [
+  /* products: Product[] = [
     {
       id: '1',
       image: 'assets/images/camiseta.png',
@@ -60,11 +69,19 @@ export class ProductsComponent implements OnInit {
       price: 80000,
       description: 'bla bla bla bla bla',
     },
-  ];
+  ]; */
 
   // FIXME: USO DE INPUTS Y OUTPUTS
   clickProduct (id: number) {
     console.log('product');
     console.log(id);
+  }
+
+  fetchProducts() {
+    this.productsService.getAllProducts()
+    // Por defecto devuelve un observable, así que tenemos que subscribirnos para obtener la respuesta
+    .subscribe(products => {
+      this.products = products;
+    })
   }
 }
