@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Componentes
-import { AdminRoutingModule } from './admin-routing.module';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 // Modulos
+import { AdminRoutingModule } from './admin-routing.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -27,7 +28,8 @@ import { MaterialModule } from '../material/material.module';
 @NgModule({
   declarations: [
     ProductFormComponent,
-    NavComponent
+    NavComponent,
+    ProductsListComponent
   ],
   imports: [
     CommonModule,

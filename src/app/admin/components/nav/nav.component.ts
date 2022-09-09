@@ -3,7 +3,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faPlus,
+  faEye
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -21,5 +24,6 @@ export class NavComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   // Iconos
-  faCirclePlus = faCirclePlus;
+  faPlus = faPlus;
+  faEye = faEye;
 }

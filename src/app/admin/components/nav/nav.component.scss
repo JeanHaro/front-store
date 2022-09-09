@@ -28,7 +28,14 @@
 
       fa-icon {
         margin-right: 1rem;
-        font-size: 3rem;
+        font-size: 1.8rem;
+        border-radius: 50%;
+        padding: 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease;
       }
 
       span {
@@ -41,6 +48,11 @@
         background-color: #ffffff;
         color: #102850;
         border-radius: 4rem 0 0 4rem;
+
+        fa-icon {
+          background-color: #102850;
+          color: #ffffff;
+        }
       }
     }
   }

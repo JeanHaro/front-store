@@ -7,12 +7,14 @@
 
     <mat-nav-list>
       <a mat-list-item routerLink="/admin/create" routerLinkActive="active">
-        <fa-icon [icon]="faCirclePlus"></fa-icon> 
+        <fa-icon [icon]="faPlus"></fa-icon> 
         <span>Crear producto</span>
       </a>
 
-      <a mat-list-item href="#"> 
-        <span>Link 2</span> 
+      <!-- FIXME: LISTA DE INVENTARIO Y DETALLE -->
+      <a mat-list-item routerLink="/admin/products" routerLinkActive="active"> 
+        <fa-icon [icon]="faEye"></fa-icon> 
+        <span>Productos</span> 
       </a>
 
       <a mat-list-item href="#">

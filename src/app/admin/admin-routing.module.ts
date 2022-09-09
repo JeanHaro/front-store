@@ -6,6 +6,7 @@ import { NavComponent } from './components/nav/nav.component';
 // FIXME: CREANDO VISTAS CON ANGULAR SHEMATIC
 // TODO: Componentes
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 // Rutas
 const routes: Routes = [
@@ -20,6 +21,11 @@ const routes: Routes = [
         path: 'create',
         component: ProductFormComponent
       },
+      // FIXME: LISTA DE INVENTARIO Y DETALLE
+      {
+        path: 'products',
+        component: ProductsListComponent
+      }
     ]
   }
 ];
