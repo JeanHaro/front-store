@@ -82,6 +82,20 @@ export class ProductsService {
   // FIXME: HACIENDO UNA SOLICITUD POST DESDE EL SERVICIO
   // TODO: Creamos un producto
   createProduct (product: Product) {
+    // TODO: En el segundo parámetro se envía el tipo, en este caso es Producto
     return this.http.post(`${environment.url_api}/products`, product);
+  }
+
+  // FIXME: HACIENDO UNA SOLICITUD PUT Y DELETE DESDE EL SERVICIO
+  // TODO: change: Partial<Product> - solo queremos una parte del producto
+  // TODO: Actualizar producto
+  updateProduct (id: string, changes: Partial<Product>) {
+    // TODO: En el segundo parámetro se envía los cambios que se quieren cambiar
+    return this.http.put(`${environment.url_api}/products/${id}`, changes);
+  }
+
+  // TODO: Eliminar producto
+  deleteProduct (id: string) {
+    return this.http.delete(`${environment.url_api}/products/${id}`);
   }
 }
