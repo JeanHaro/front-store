@@ -49,6 +49,11 @@ export class ProductDetailComponent implements OnInit {
     })
   }
 
+  // Estilo Favorito
+  activeFavorite() {
+    (this.faHeart != definition) ? this.faHeart = definition : this.faHeart = faHeart;
+  }
+
   fetchProduct (id: string) {
     this.productService.getProduct(id)
     // Subscribirnos para recibir la respuesta
@@ -57,7 +62,20 @@ export class ProductDetailComponent implements OnInit {
     })
   }
 
-  activeFavorite() {
-    (this.faHeart != definition) ? this.faHeart = definition : this.faHeart = faHeart;
+  // TODO: Crear producto
+  createProduct() {
+    const newProduct: Product = {
+      id: '222',
+      title: 'Nuevo desde angular',
+      image: '../../../../assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'asdasdasd'
+    };
+
+    this.productService.createProduct(newProduct)
+    // Subscribirnos para recibir la respuesta
+    .subscribe(product => {
+      console.log(product);
+    })
   }
 }

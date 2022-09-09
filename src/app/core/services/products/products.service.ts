@@ -78,4 +78,10 @@ export class ProductsService {
     // return this.products.find(item => id === item.id);
     return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
+
+  // FIXME: HACIENDO UNA SOLICITUD POST DESDE EL SERVICIO
+  // TODO: Creamos un producto
+  createProduct (product: Product) {
+    return this.http.post(`${environment.url_api}/products`, product);
+  }
 }
