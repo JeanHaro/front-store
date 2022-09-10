@@ -48,15 +48,17 @@
                 <div class="box">
                     <h3>Contacto</h3>
 
-                    <mat-form-field>
-                        <input matInput placeholder="Digite su correo" [formControl]="emailField" type="text">
-                    </mat-form-field>
-                    <!-- TODO: *ngIf, si al validar emailField en el constructor sale true aparecerá el botón -->
-                    <!-- TODO: Al hacerle click va a enviar el texto a la consola -->
-                    <!-- <button mat-raised-button *ngIf="emailField.valid" (click)="sendMail()">Enviar</button> -->
-                    <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
-                    <!-- {{ emailField.valid }}, {{ emailField.invalid }} --> <!-- true or false -->
-                    <!-- <p *ngIf="emailField.invalid">El campo no es valido</p> -->
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Digite su correo" [formControl]="emailField" type="text">
+                        </mat-form-field>
+                        <!-- TODO: *ngIf, si al validar emailField en el constructor sale true aparecerá el botón -->
+                        <!-- TODO: Al hacerle click va a enviar el texto a la consola -->
+                        <!-- <button mat-raised-button *ngIf="emailField.valid" (click)="sendMail()">Enviar</button> -->
+                        <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
+                        <!-- {{ emailField.valid }}, {{ emailField.invalid }} --> <!-- true or false -->
+                        <!-- <p *ngIf="emailField.invalid">El campo no es valido</p> -->
+                    </div>
                 </div>
             </div><!-- Contacto -->
         </div>

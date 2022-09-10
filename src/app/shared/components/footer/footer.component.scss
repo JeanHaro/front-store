@@ -36,15 +36,35 @@ footer {
     
         div:nth-child(3) .box {
             display: flex;
-            flex-direction: column ;
+            flex-direction: column;
             align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            
+                @media (min-width: 1028px) {
+                    flex-direction: row;
+                }
+            }
     
             input[type="text"] {
                 outline: none;
                 border: none;
-                padding: 0.8rem;
-                border-radius: 0.5rem;
+                color: #ffff;
+                flex: 1;
+            } 
+
+            button {
+                width: 100%;
+
+                @media (min-width: 1028px) {
+                    width: auto;
+                }
             }
         }
     }
 }
+
