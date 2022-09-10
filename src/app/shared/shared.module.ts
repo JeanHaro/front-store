@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+// FIXME: INTRODUCCION AL FORMCONTROL
+import { ReactiveFormsModule } from '@angular/forms';
 
 // FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 // Componentes  
@@ -29,7 +31,8 @@ import { MaterialModule } from '../material/material.module';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
     ExponentialPipe,

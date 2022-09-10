@@ -1,0 +1,50 @@
+// FIXME: INTRODUCCION AL FORMCONTROL
+footer {
+    background-color: #102850;
+    padding: 5rem;
+    width: 100%;
+
+    .container {
+        width: 100%;
+
+        .box {
+            h3 {
+                color: #ffff;
+                text-align: center;
+                font-weight: bold;
+                margin: 3rem 0 !important;
+            }
+        
+            ul {
+                list-style: none;
+                text-align: center;
+        
+                li {
+                    margin-bottom: 1.5rem;
+                }
+        
+                a {
+                    color: #f0f0f0;
+        
+                    &:hover {
+                        text-decoration: underline;
+                        color: #d1d1d1;
+                    }
+                }
+            }
+        }
+    
+        div:nth-child(3) .box {
+            display: flex;
+            flex-direction: column ;
+            align-items: center;
+    
+            input[type="text"] {
+                outline: none;
+                border: none;
+                padding: 0.8rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}

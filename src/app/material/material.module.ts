@@ -14,6 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
+// FIXME: INTRODUCCION AL FORMCONTROL
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -25,7 +27,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -35,7 +38,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule { }

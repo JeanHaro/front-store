@@ -1,1 +1,64 @@
-<p>footer works!</p>
+<!-- FIXME: INTRODUCCION AL FORMCONTROL -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <h3>Productos</h3>
+
+                    <ul>
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'news' }">
+                                Nuevos Productos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'offer' }">
+                                En Oferta
+                            </a>
+                        </li>
+
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'latest' }">
+                                Últimos Productos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- Productos -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <h3>Acerca de la MiniTienda</h3>
+
+                    <ul>
+                        <li>
+                            <a routerLink="/about-us">Sobre Nosotros</a>
+                        </li>
+
+                        <li>
+                            <a routerLink="/stores">Nuestras Tiendas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- Sobre Nosotros -->
+
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <h3>Contacto</h3>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Digite su correo" [formControl]="emailField" type="text">
+                    </mat-form-field>
+                    <!-- TODO: *ngIf, si al validar emailField en el constructor sale true aparecerá el botón -->
+                    <!-- TODO: Al hacerle click va a enviar el texto a la consola -->
+                    <!-- <button mat-raised-button *ngIf="emailField.valid" (click)="sendMail()">Enviar</button> -->
+                    <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
+                    <!-- {{ emailField.valid }}, {{ emailField.invalid }} --> <!-- true or false -->
+                    <!-- <p *ngIf="emailField.invalid">El campo no es valido</p> -->
+                </div>
+            </div><!-- Contacto -->
+        </div>
+    </div>
+</footer>
