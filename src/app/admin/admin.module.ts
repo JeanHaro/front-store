@@ -24,12 +24,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Material Module
 import { MaterialModule } from '../material/material.module';
+import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
   declarations: [
     ProductFormComponent,
     NavComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    FormProductComponent
   ],
   imports: [
     CommonModule,
