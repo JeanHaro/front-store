@@ -4,6 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 // Para que funcione el [ngModel]
 import { FormsModule } from '@angular/forms';
 
+// FIXME: INSTALAR ANGULAR FIREBASE Y CONFIGURAR FIREBASE AUTH
+import { AngularFireModule } from '@angular/fire/compat';
+// Activará la autenticación
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 // FIXME: CREANDO NUESTROS PROPIOS SERVICIOS: HTTP CLIENT 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,6 +26,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 import { SharedModule } from './shared/shared.module'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+
+// Environments
+import { environment } from '../environments/environment';
+
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -34,7 +48,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "minitienda-42f9f": {
+      "hosting": {
+        "store": [
+          "minitienda-42f9f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "minitienda-42f9f"
+  }
+}

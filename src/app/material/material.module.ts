@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 // FIXME: INTRODUCCION AL FORMCONTROL
 import { MatFormFieldModule } from '@angular/material/form-field';
 // FIXME: CREANDO LA PÁGINA DE LA ORDEN Y USO DE ASYNC
-import { MatStep, MatStepperModule } from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],

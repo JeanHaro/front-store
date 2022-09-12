@@ -49,8 +49,7 @@ const routes: Routes = [
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
-        path: 'login',
-        canActivate: [AdminGuard],
+        path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
       // FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC

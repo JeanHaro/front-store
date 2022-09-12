@@ -104,6 +104,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "store:build:production",
+            "firebaseProject": "minitienda-42f9f",
+            "firebaseHostingSite": "minitienda-42f9f"
+          }
         }
       }
     }
