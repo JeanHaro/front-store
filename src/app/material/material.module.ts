@@ -16,6 +16,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 // FIXME: INTRODUCCION AL FORMCONTROL
 import { MatFormFieldModule } from '@angular/material/form-field';
+// FIXME: CREANDO LA PÁGINA DE LA ORDEN Y USO DE ASYNC
+import { MatStep, MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -28,7 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule
   ],
   exports: [
     MatButtonModule,
@@ -39,7 +42,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }

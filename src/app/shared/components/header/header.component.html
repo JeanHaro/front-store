@@ -18,7 +18,8 @@
             <!-- FIXME: AÑADIENDO PRODUCTOS AL CARRITO -->
             <!-- FIXME: USA UN PIPE PARA HACER UN CONTADOR DE PRODUCTOS -->
             <!-- TODO: async - el automáticamente hará la suscripción, cuando el elemento ya no se usa va a desuscribirse -->
-            <a mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" class="btn-green">
+            <!-- FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC -->
+            <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" class="btn-green">
                 <mat-icon>shopping_cart</mat-icon>
                 <span>Carrito</span>
             </a>

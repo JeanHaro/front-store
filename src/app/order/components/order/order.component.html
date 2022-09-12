@@ -1,0 +1,48 @@
+<!-- FIXME: CREANDO LA PÁGINA DE LA ORDEN Y USO DE ASYNC -->
+<mat-stepper linear #stepper class="contenido">
+    <mat-step>
+        <ng-template matStepLabel>Sus productos</ng-template>
+        <!--  -->
+        <div *ngIf="(products$ | async) as products">
+            <!-- TODO: Si es que no hay productos, se mostrará -->
+            <p *ngIf="products.length === 0">No hay productos</p>
+
+            <!-- Muestra todos los nombres de los productos suscritos -->
+            <!-- <ul>
+                <li *ngFor="let product of products">
+                    {{ product.title }}
+                </li>
+            </ul> -->
+
+            <div class="row" *ngFor="let product of products">
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="box">
+                        <img src="image" [src]="product.image" alt="">
+                    </div>
+                </div><!-- Imagen -->
+
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="box">
+                        {{ product.title }}
+                    </div>
+                </div><!-- Nombre  -->
+
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="box">
+                        {{ product.price }}
+                    </div>
+                </div><!-- Precio -->
+            </div>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Datos personales</ng-template>
+        <h1>Contenido</h1>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Pago</ng-template>
+        <h1>Contenido</h1>
+    </mat-step>
+</mat-stepper>
