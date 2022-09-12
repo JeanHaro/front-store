@@ -66,6 +66,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    // FIXME: IMPLEMENTANDO AUTH Y GUARDS
+    canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
