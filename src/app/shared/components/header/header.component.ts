@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+// FIXME: USA UN PIPE PARA HACER UN CONTADOR DE PRODUCTOS
+// TODO: map - transformar el valor que nos llega por uno nuevo
+import { map } from 'rxjs/operators';
+
 import { 
   faBars, 
   faClose 
 } from '@fortawesome/free-solid-svg-icons';
 
+// FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Servicio
 import { CartService } from 'src/app/core/services/cart.service';
 
@@ -14,14 +20,19 @@ import { CartService } from 'src/app/core/services/cart.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  total = 0;
+
+  // TODO: Observable de valor número
+  total$: Observable<number>;
 
   constructor (private cartService: CartService) { 
     // TODO: Acá obtenemos los productos que se vayan agregando al carrito
-    this.cartService.cart$.subscribe(products => {
-      console.log(products);
-      this.total = products.length;
-    })
+    // TODO: En map, se sentencia como lo vamos a transformar a un valor que es el tamño de la lista
+    // TODO: Ahora nos suscribimos pero desde el template
+    this.total$ = this.cartService.cart$.pipe(map(products => products.length));
+    // Nos llegaría otra cosa, no productos, porque lo transformamos
+    /* .subscribe(total => {
+      this.total = total;
+    }) */
   }
 
   ngOnInit(): void {
