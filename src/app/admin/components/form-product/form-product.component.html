@@ -49,6 +49,15 @@
                     </mat-form-field>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-xs">
+                    <img *ngIf="(image$ | async) as image" [src]="image$ | async" alt="">
+                    <!-- FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE -->
+                    <!-- TODO: uploadFile() - Cuando detectemos un cambio que suba ese archivo -->
+                    <input type="file" (change)="uploadFile($event)">
+                </div>
+            </div>
         </mat-card-content>
 
         <mat-card-actions>

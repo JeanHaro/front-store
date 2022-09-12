@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+// FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE
+// Firebase
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 // Servicios
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -21,11 +28,13 @@ import { MyValidators } from 'src/app/utils/validators';
 export class FormProductComponent implements OnInit {
 
   form!: FormGroup;
+  image$!: Observable<any>;
 
   constructor (
     private formBuilder: FormBuilder,
     private productService: ProductsService,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage
   ) { 
     this.buildForm();
   }
@@ -48,6 +57,40 @@ export class FormProductComponent implements OnInit {
         this.router.navigate(['./admin/products'])
       });
     }
+
+    console.log(this.form.value);
+  }
+
+  // FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE
+  // TODO: Cargar archivo
+  uploadFile (event: Event) {
+    // Archivo
+    // TODO: Como solo pedimos un ardchivo pedimos en la posición 1
+    const target = event.target as HTMLInputElement;
+    // TODO: Ve que el archivo sea de tipo archivo o file
+    const file: File = (target.files as FileList)[0];
+    // TODO: Para que salga con nombre la imagen
+    const name = file.name;
+    // TODO: Referencia del archivo
+    const fileRef = this.storage.ref(name);
+    // TODO: Suba un archivo en la carpeta name, y le mandamos el archivo (file)
+    const task = this.storage.upload(name, file);
+  
+    // TODO: snapshotChanges - Permitir cuando finalizar
+    task.snapshotChanges()
+    .pipe(
+      // TODO: Cuando finaliza
+      // Obtener la URL
+      finalize(() => {
+        this.image$ = fileRef.getDownloadURL();
+        this.image$.subscribe(url => {
+          console.log(url);
+          this.form.get('image')?.setValue(url); // Obtener el valor de la URL
+        })
+      })
+    )
+    // TODO: Para que se procese
+    .subscribe();
   }
 
   // TODO: Validación del formulario
