@@ -5,14 +5,24 @@ import {
   faClose 
 } from '@fortawesome/free-solid-svg-icons';
 
+// Servicio
+import { CartService } from 'src/app/core/services/cart.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  total = 0;
 
-  constructor() { }
+  constructor (private cartService: CartService) { 
+    // TODO: Acá obtenemos los productos que se vayan agregando al carrito
+    this.cartService.cart$.subscribe(products => {
+      console.log(products);
+      this.total = products.length;
+    })
+  }
 
   ngOnInit(): void {
   }

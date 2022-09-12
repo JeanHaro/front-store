@@ -19,6 +19,10 @@ import {
 // Modelo
 import { Product } from "../../../core/models/product.model";
 
+// FIXME: AÑADIENDO PRODUCTOS AL CARRITO
+// Servicios
+import { CartService } from "src/app/core/services/cart.service";
+
 // TODO: Clase
 // TODO: Para que cualquier elemento en Angular pueda usar la clase o nuestro componente, usamos la palabra "export"
 // TODO: Se coloca acá el Decorador "@Component"
@@ -45,13 +49,15 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         // TODO: emit() - Colocar que cosa queremos emitir depende del tipo que colocamos en el productClicked
         // TODO: Como es any es cualquier valor o tipo, si es number pide número, etc.
         // TODO: Emitirá el id del producto
-        this.productClicked.emit(this.product.id);
+        // this.productClicked.emit(this.product.id);
+        // TODO: Agregar ese producto al carro
+        this.cartService.addCart(this.product);
     }
 
     // FIXME: CICLO DE VIDA DE LOS COMPONENTES
     /* TODO: Acá es donde se construye nuestro elemento o nuestro productComponent y Angular hace referencia a el y lo 
     pone en interfaz */
-    constructor() {
+    constructor (private cartService: CartService) {
         console.log('1, constructor');
     }
 

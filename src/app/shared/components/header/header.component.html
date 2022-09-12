@@ -15,7 +15,7 @@
             <a mat-button class="btn-nav" routerLink="/contact" routerLinkActive="active">Contacto</a>
             <a mat-button class="btn-nav" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
             <!-- FIXME: CREANDO EL HEADER -->
-            <a mat-raised-button matBadge="4" matBadgeColor="warn" class="btn-green">
+            <a mat-raised-button [matBadge]="total" matBadgeColor="warn" class="btn-green">
                 <mat-icon>shopping_cart</mat-icon>
                 <span>Carrito</span>
             </a>

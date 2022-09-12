@@ -16,7 +16,15 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 export class ProductsComponent implements OnInit {
 
   // Productos
-  products: Product[] = [];
+  products: Product[] = [
+    {
+      id: '1',
+      image: 'assets/images/camiseta.png',
+      title: 'Camiseta',
+      price: 80000,
+      description: 'bla bla bla bla bla',
+    },
+  ];
 
   constructor (private productsService: ProductsService) { }
 
