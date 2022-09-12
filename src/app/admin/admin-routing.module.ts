@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from '../products/components/product/product.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 // FIXME: CREANDO VISTAS CON ANGULAR SHEMATIC
 // TODO: Componentes
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'products/create',
         component: FormProductComponent
+      },
+      {
+        path: 'products/edit/:id',
+        component: ProductEditComponent
       }
     ]
   }

@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { FormProductComponent } from './components/form-product/form-product.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 // Modulos
 import { AdminRoutingModule } from './admin-routing.module';
@@ -24,14 +26,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Material Module
 import { MaterialModule } from '../material/material.module';
-import { FormProductComponent } from './components/form-product/form-product.component';
 
 @NgModule({
   declarations: [
     ProductFormComponent,
     NavComponent,
     ProductsListComponent,
-    FormProductComponent
+    FormProductComponent,
+    ProductEditComponent
   ],
   imports: [
     CommonModule,
