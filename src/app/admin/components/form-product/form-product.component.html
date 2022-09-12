@@ -31,6 +31,14 @@
                     <mat-form-field>
                         <input placeholder="Ingrese el precio" formControlName="price" matInput type="number">
                     </mat-form-field>
+                    
+                    <!-- Si el formulario en los precios encuentras errores -->
+                    <div *ngIf="priceField?.errors && priceField?.dirty">
+                        <!-- Si es invalido por configuración del Validators -->
+                        <mat-error *ngIf="priceField?.hasError('price_invalid')">No te debes pasar de 10000</mat-error>
+                        <!-- Si está vacío-->
+                        <mat-error *ngIf="priceField?.hasError('required')">El campo es requerido</mat-error>
+                    </div>
                 </div>
             </div>
 
@@ -44,7 +52,8 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <button mat-raised-button type="submit">Guardar</button>
+            <!-- TODO: disabled - deshabilitará el botón si el formulario no es valido-->
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
         </mat-card-actions><!-- Acciones-->
     </mat-card>
 </form>

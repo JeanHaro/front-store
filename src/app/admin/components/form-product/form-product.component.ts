@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 // Servicios
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
+// FIXME: Validaciones personalizadas
+// Utils
+import { MyValidators } from 'src/app/utils/validators';
+
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
@@ -46,14 +50,22 @@ export class FormProductComponent implements OnInit {
     }
   }
 
+  // TODO: Validación del formulario
   private buildForm() {
     this.form = this.formBuilder.group({
         // TODO: Todos los formControl necesitamos
         id: ['', [Validators.required]],
         title: ['', [Validators.required]],
-        price: ['', [Validators.required]],
+        price: ['', [Validators.required, MyValidators.isPriceValid]],
         image: [''],
         description: ['', [Validators.required]]
     });
   }
+
+  // TODO: Obtiene el precio del formulario
+  get priceField() {
+    return this.form.get('price');
+  }
 }
+
+
