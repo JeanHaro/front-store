@@ -58,47 +58,8 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getProduct(id)
     // Subscribirnos para recibir la respuesta
     .subscribe(product => {
-      this.product = product;
-    })
-  }
-
-  // TODO: Crear producto
-  createProduct() {
-    const newProduct: Product = {
-      id: '222',
-      title: 'Nuevo desde angular',
-      image: '../../../../assets/images/banner-1.jpg',
-      price: 3000,
-      description: 'asdasdasd'
-    };
-
-    this.productService.createProduct(newProduct)
-    // Subscribirnos para recibir la respuesta
-    .subscribe(product => {
-      console.log(product);
-    })
-  }
-
-  // TODO: Actualizar producto
-  updateProduct() {
-    const updatesProduct: Partial<Product> = {
-      price: 555555,
-      description: 'edición título'
-    };
-
-    this.productService.updateProduct('222', updatesProduct)
-    // Subscribirnos para recibir la respuesta
-    .subscribe(product => {
-      console.log(product);
-    })
-  }
-
-  // TODO: Eliminar producto
-  deleteProduct() {
-    this.productService.deleteProduct('222')
-    // Subscribirnos para recibir la respuesta
-    .subscribe(rta => {
-      console.log(rta);
+      const products = Object.entries(product);
+      this.product = products[1][1];
     })
   }
 }

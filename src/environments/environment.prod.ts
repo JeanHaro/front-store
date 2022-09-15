@@ -8,5 +8,5 @@ export const environment = {
     messagingSenderId: '1022644268964',
   },
   production: true,
-  url_api: 'http://localhost:3000/api'
+  url_api: 'http://localhost:3001/api'
 };

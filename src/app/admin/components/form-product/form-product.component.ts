@@ -97,10 +97,9 @@ export class FormProductComponent implements OnInit {
   private buildForm() {
     this.form = this.formBuilder.group({
         // TODO: Todos los formControl necesitamos
-        id: ['', [Validators.required]],
         title: ['', [Validators.required]],
         price: ['', [Validators.required, MyValidators.isPriceValid]],
-        image: [''],
+        image: [],
         description: ['', [Validators.required]]
     });
   }
