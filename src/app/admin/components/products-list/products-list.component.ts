@@ -12,15 +12,8 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: Product[] = [
-    {
-      id: '1',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 80000,
-      description: 'bla bla bla bla bla',
-    },
-  ];
+  products: Product[] = [];
+  
   // TODO: Esto se saca de Angular Material
   displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
 
@@ -35,8 +28,14 @@ export class ProductsListComponent implements OnInit {
   // TODO: Para mandar datos
   fetchProducts(): void {
     this.productsService.getAllProducts()
-    .subscribe((products) => {
-      this.products = products;
+    .subscribe((items) => {
+      let products = Object.entries(items);
+      this.products = products[1][1];
+
+      // Guardamos valores en order
+      for (let i = 0; i < this.products.length; i++) {
+        this.products[i].order = i + 1;
+      }
     })
   }
 
@@ -47,4 +46,10 @@ export class ProductsListComponent implements OnInit {
       this.fetchProducts();
     })
   }
+
+  /* numOrder() {
+    for (let i = 0; i < this.products.length; i++) {
+      this.contador = i;
+    }
+  } */
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 // FIXME: CREANDO RUTAS EN ANGULAR
 // TODO: Interface
@@ -13,23 +13,20 @@ import { ProductsService } from 'src/app/core/services/products/products.service
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnChanges {
 
   // Productos
-  products: Product[] = [
-    {
-      id: '1',
-      image: 'assets/images/camiseta.png',
-      title: 'Camiseta',
-      price: 80000,
-      description: 'bla bla bla bla bla',
-    },
-  ];
+  products: Product[] = [];
 
   constructor (private productsService: ProductsService) { }
 
   ngOnInit(): void { 
     this.fetchProducts();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('hola' + changes);
+    
   }
 
   // FIXME: USO DE ngFor PARA RECORRER OBJETOS
@@ -87,9 +84,16 @@ export class ProductsComponent implements OnInit {
 
   fetchProducts() {
     this.productsService.getAllProducts()
-    // Por defecto devuelve un observable, así que tenemos que subscribirnos para obtener la respuesta
-    .subscribe(products => {
-      this.products = products;
+    .subscribe((items) =>{
+      // entries() - Vuelve las propiedades de un objeto a un Array
+      let products = Object.entries(items);
+      this.products = products[1][1];
     })
   }
+  
+    // Por defecto devuelve un observable, así que tenemos que subscribirnos para obtener la respuesta
+    /* .subscribe(products => {
+      this.products = products;
+      this.productos.push(this.products);
+    }) */
 }

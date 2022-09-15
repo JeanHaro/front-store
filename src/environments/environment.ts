@@ -12,7 +12,7 @@ export const environment = {
     messagingSenderId: '1022644268964',
   },
   production: false,
-  url_api: 'http://platzi-store.herokuapp.com'
+  url_api: 'http://localhost:3000/api'
 };
 
 /*

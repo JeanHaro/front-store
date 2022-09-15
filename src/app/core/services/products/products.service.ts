@@ -68,7 +68,7 @@ export class ProductsService {
   getAllProducts() {
     // get - solicitar información
     // return this.products;
-    return this.http.get<Product[]>(`${environment.url_api}/products`);
+    return this.http.get<Product>(`${environment.url_api}/productos`);
   }
 
   // TODO: Recibe el id del producto que queremos buscar
@@ -76,14 +76,14 @@ export class ProductsService {
     // TODO: find - es para encontrar un valor, donde se manda una función
     // TODO: Si el id coincide con el item.id, ese será el producto que les va a devolver
     // return this.products.find(item => id === item.id);
-    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/productos/${id}`);
   }
 
   // FIXME: HACIENDO UNA SOLICITUD POST DESDE EL SERVICIO
   // TODO: Creamos un producto
   createProduct (product: Product) {
     // TODO: En el segundo parámetro se envía el tipo, en este caso es Producto
-    return this.http.post(`${environment.url_api}/products`, product);
+    return this.http.post(`${environment.url_api}/productos`, product);
   }
 
   // FIXME: HACIENDO UNA SOLICITUD PUT Y DELETE DESDE EL SERVICIO
@@ -91,11 +91,11 @@ export class ProductsService {
   // TODO: Actualizar producto
   updateProduct (id: string, changes: Partial<Product>) {
     // TODO: En el segundo parámetro se envía los cambios que se quieren cambiar
-    return this.http.put(`${environment.url_api}/products/${id}`, changes);
+    return this.http.put(`${environment.url_api}/productos/${id}`, changes);
   }
 
   // TODO: Eliminar producto
   deleteProduct (id: string) {
-    return this.http.delete(`${environment.url_api}/products/${id}`);
+    return this.http.delete(`${environment.url_api}/productos/${id}`);
   }
 }
