@@ -9,10 +9,6 @@ import { HomeComponent } from "./components/home/home.component";
 // Rutas
 import { HomeRoutingModule } from "./home-routing.module";
 
-// FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
-// Modulos
-import { SharedModule } from "../shared/shared.module";
-
 @NgModule({
     // TODO: Acá estarán los componentes
     declarations: [
@@ -23,7 +19,6 @@ import { SharedModule } from "../shared/shared.module";
     // FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
     imports: [
         CommonModule,
-        SharedModule,
         HomeRoutingModule
     ]
 })

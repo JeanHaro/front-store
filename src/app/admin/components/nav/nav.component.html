@@ -9,18 +9,19 @@
       <a mat-list-item routerLink="/admin/create" routerLinkActive="active">
         <fa-icon [icon]="faPlus"></fa-icon> 
         <span>Crear producto</span>
-      </a>
+      </a><!-- Enlace -->
 
       <!-- FIXME: LISTA DE INVENTARIO Y DETALLE -->
       <a mat-list-item routerLink="/admin/products" routerLinkActive="active"> 
         <fa-icon [icon]="faEye"></fa-icon> 
         <span>Productos</span> 
-      </a>
+      </a><!-- Enlace -->
 
       <!-- FIXME: IMPLEMENTANDO AUTH Y GUARDS -->
       <button mat-list-item (click)="logout()">
+        <fa-icon [icon]="faRightFromBracket"></fa-icon>
         <span>Cerrar sesión</span>
-      </button>
+      </button><!-- Enlace -->
     </mat-nav-list><!-- Enlaces -->
   </mat-sidenav><!-- Sidenav -->
 
@@ -43,4 +44,4 @@
       <router-outlet></router-outlet>
     </div><!-- Contenido -->
   </mat-sidenav-content>
-</mat-sidenav-container><!-- Contiene todo -->
+</mat-sidenav-container><!-- Contenedor nav -->

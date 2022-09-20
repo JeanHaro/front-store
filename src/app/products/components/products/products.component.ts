@@ -82,6 +82,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     console.log(id);
   }
 
+  // Obtienes todos los productos
   fetchProducts() {
     this.productsService.getAllProducts()
     .subscribe((items) =>{
@@ -90,10 +91,4 @@ export class ProductsComponent implements OnInit, OnChanges {
       this.products = products[1][1];
     })
   }
-  
-    // Por defecto devuelve un observable, así que tenemos que subscribirnos para obtener la respuesta
-    /* .subscribe(products => {
-      this.products = products;
-      this.productos.push(this.products);
-    }) */
 }

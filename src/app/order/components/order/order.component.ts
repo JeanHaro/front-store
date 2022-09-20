@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC
+// Observaciones
 import { Observable } from 'rxjs';
 
 // Modelo
 import { Product } from 'src/app/core/models/product.model';
 
 // Servicios
-import { CartService } from 'src/app/core/services/cart.service';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 
 @Component({
   selector: 'app-order',
@@ -15,6 +16,7 @@ import { CartService } from 'src/app/core/services/cart.service';
 })
 export class OrderComponent implements OnInit {
 
+  // Variables - observable
   products$!: Observable<Product[]>;
 
   constructor (private cartService: CartService) {

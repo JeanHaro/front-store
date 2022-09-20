@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/core/models/product.model'; 
 
 // FIXME: HACIENDO UNA SOLICITUD GET DESDE EL SERVICIO
+// Environment
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -65,6 +66,7 @@ export class ProductsService {
   ]; */
 
   // TODO: Método que te devuelve todos los productos
+  // Obtener todos los productos
   getAllProducts() {
     // get - solicitar información
     // return this.products;
@@ -72,6 +74,7 @@ export class ProductsService {
   }
 
   // TODO: Recibe el id del producto que queremos buscar
+  // Obtener un producto por su id
   getProduct (id: string) {
     // TODO: find - es para encontrar un valor, donde se manda una función
     // TODO: Si el id coincide con el item.id, ese será el producto que les va a devolver

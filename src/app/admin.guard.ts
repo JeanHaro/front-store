@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+
+// Observable
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators'
+
 import { Router } from '@angular/router';
 
 // FIXME: IMPLEMENTANDO AUTH Y GUARDS

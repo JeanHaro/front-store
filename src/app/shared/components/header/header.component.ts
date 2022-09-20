@@ -12,7 +12,7 @@ import {
 
 // FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Servicio
-import { CartService } from 'src/app/core/services/cart.service';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 
 @Component({
   selector: 'app-header',

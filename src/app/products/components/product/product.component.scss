@@ -1,22 +1,24 @@
 // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
 // TODO: host - hará referencia al div (app-product) que cubre a los elementos del HTML
 :host {
-    margin: 0.2rem;
-    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    margin: 0.2rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
     border: 0.5rem solid #f0f0f0;
     background-color: #f0f0f0;
-    padding: 2rem;
 }
 
 :host:hover {
     border: 0.5rem solid rgb(70, 68, 68);
 }
 
+// Nombre del producto
 h3 {
     text-align: center;
     padding: 2rem 0 !important;
@@ -24,23 +26,37 @@ h3 {
     font-weight: bold;
 }
 
-img {
+// Imagen del producto
+.product__content-img {
     // TODO: Los estilos que están acá solo van a tener dominio en este componente Product
-    height: 18rem;
-    object-fit: cover;
-    filter: drop-shadow(4px 4px 2px #2e2e2d);
+        height: 18rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    img {
+        max-height: 100%;
+        object-fit: cover;
+        filter: drop-shadow(4px 4px 2px #2e2e2d);
+    }
 }
 
+// Precio del producto
 strong {
     text-align: center;
     display: block;
     margin: 1rem 0;
 }
 
+// Descripción del producto
 p {
     margin-bottom: 2rem !important;
 }
 
+// Botones del producto
 .product__button {
     width: 100%;
     margin-top: 0.5rem;

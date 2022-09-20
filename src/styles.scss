@@ -21,6 +21,35 @@ body {
     padding: 0;
     font-family: sans-serif;
     overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100vh;
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    &::-webkit-scrollbar:vertical {
+        width: 7px;
+    }
+    
+    &::-webkit-scrollbar-button:increment,
+    &::-webkit-scrollbar-button {
+        display: none;
+    } 
+    
+    &::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #c2c2c2ad;
+        border-radius: 20px;
+        border: 2px solid transparent;
+    }
+    
+    &::-webkit-scrollbar-track {
+        border-radius: 20px;  
+    }
 }
 
 h1, h2, h3, p, ul {
@@ -59,7 +88,7 @@ a {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 .hidden {
@@ -116,16 +145,25 @@ img {
 }
 
 .btn-green {
-    background-color: rgb(161, 212, 84);
+    background-color: #a1d454;
     transition: 0.5s ease;
-}
-
-.btn-green:hover {
-    background-color: rgb(125, 172, 71);
+    
+    &:hover {
+        background-color: #7dac47;
+    }
 }
 
 .btn-blue:hover {
     background-color: #34418d;
+}
+
+.btn-red {
+    background-color: #ca3e3e;
+    transition: 0.5s ease;
+
+    &:hover {
+        background-color: #bb3030;
+    }
 }
 
 .btn-nav:hover {
@@ -141,3 +179,231 @@ img {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// ----- TODO: Styles Auth -----
+// Formulario auth
+.form__auth {
+    margin: auto;
+    width: 100%;
+
+    // Contenedor del formulario
+    .container {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        @media (min-width: 540px) {
+            width: 50rem;
+            padding: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+            
+            width: 65rem;
+            padding: 8rem 0;
+        }
+
+        // Contenido de la imagen
+        .form__content-img {
+            align-self: center;
+
+            display: none;
+            visibility: hidden;
+
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+
+            @media (min-width: 768px) {
+                display: block;
+                visibility: visible;
+
+                width: 50rem;
+                height: 50rem;
+
+                flex-basis: 75%;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        // Enlace auth
+        .form__check-in {
+            margin: 1.5rem 0;
+            margin-top: 0rem;
+            font-size: 1.4rem;
+
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: 400px) {
+                flex-direction: row;
+            }
+
+            a {
+                color: #102850;
+                text-decoration: underline;
+                margin-top: 1rem;
+
+                @media (min-width: 400px) {
+                    margin-top: 0;
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        // Contenido del formulario
+        .mat-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 5rem 3rem;
+
+            @media (min-width: 768px) {
+                align-self: center;
+                flex: 1;
+
+                position: absolute;
+                right: 0;
+
+                width: 50%;
+            }
+
+            // Titulo
+            .mat-card-title {
+                text-transform: uppercase;
+                color: #102850;
+            }
+
+            // Conteneder de los Inputs
+            .mat-card-content {
+                width: 100%;
+                margin-top: 1rem;
+
+                // Contenedor input
+                .mat-form-field {
+                    width: 100%;
+                    font-size: 1.6rem;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+            
+            // Acciones
+            .mat-card-actions {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+// -------- TODO: Styles Form Admin -------
+// Formulario del admin
+.form__admin {
+    // Contenedor de la tarjeta
+    mat-card {
+        padding: 2rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 540px) {
+            padding: 5rem;
+        }
+    
+        // Titulo
+        .mat-card-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #102850;
+            line-height: 3rem;
+
+            @media (min-width: 540px) {
+                font-size: 2.4rem;
+            }
+        }
+    
+        // Contenedor de los input
+        .mat-form-field {
+            font-size: 1.6rem;
+            width: 100%;
+        }
+    
+        // Subida y muestra de Imagen
+        .form__image-create {
+            display: flex;
+            flex-direction: column;
+    
+            img {
+                max-height: 10rem;
+                object-fit: contain;
+                margin-bottom: 2rem;
+                filter: drop-shadow(4px 4px 2px #2e2e2d);
+            }
+    
+            p {
+                text-align: center;
+            }
+    
+            input[type="file"] {
+                display: none;
+            }
+    
+            label {
+                color: white;
+                padding: 2rem;
+                background-color: #747474;
+                cursor: pointer;
+                margin: 1rem auto;
+                border-radius: 1rem;
+                font-size: 1.6rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                transition: 0.5s ease;
+        
+                fa-icon {
+                    margin-right: 1rem;
+                    font-size: 1.6rem;
+                }
+        
+                &:hover {
+                    background-color: #535353;
+                }
+            }
+        }
+    
+        // Acciones
+        .mat-card-actions {
+                width: 100%;
+    
+            @media (min-width: 855px) {
+                width: 25%;
+            }
+    
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

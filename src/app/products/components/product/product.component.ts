@@ -21,7 +21,7 @@ import { Product } from "../../../core/models/product.model";
 
 // FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Servicios
-import { CartService } from "src/app/core/services/cart.service";
+import { CartService } from "src/app/core/services/cart/cart.service";
 
 // TODO: Clase
 // TODO: Para que cualquier elemento en Angular pueda usar la clase o nuestro componente, usamos la palabra "export"
@@ -44,6 +44,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     @Input() product!: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+    // Añadir al carrito
     addCart() {
         console.log('añadir al carrito');
         // TODO: emit() - Colocar que cosa queremos emitir depende del tipo que colocamos en el productClicked

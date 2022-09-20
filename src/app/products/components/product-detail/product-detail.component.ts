@@ -24,6 +24,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductDetailComponent implements OnInit {
 
+  // Variable
   product!: Product;
 
   constructor (private route: ActivatedRoute, private productService: ProductsService) { }
@@ -54,10 +55,12 @@ export class ProductDetailComponent implements OnInit {
     (this.faHeart != definition) ? this.faHeart = definition : this.faHeart = faHeart;
   }
 
+  // Obtener los valores de un producto
   fetchProduct (id: string) {
     this.productService.getProduct(id)
     // Subscribirnos para recibir la respuesta
     .subscribe(product => {
+      // Obteniendo el objeto del backend para conseguir los valores del producto
       const products = Object.entries(product);
       this.product = products[1][1];
     })

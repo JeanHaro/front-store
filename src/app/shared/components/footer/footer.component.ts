@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // FIXME: INTRODUCCION AL FORMCONTROL
+// Formularios
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -10,6 +11,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FooterComponent implements OnInit {
 
+  // Variables
   emailField!: FormControl;
 
   constructor() {
@@ -32,6 +34,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Envía el email a la consola
   sendMail() {
     if (this.emailField.valid) {
       // TODO: Si es valido me va a devolver el valor que tenemos actualmente en la consola

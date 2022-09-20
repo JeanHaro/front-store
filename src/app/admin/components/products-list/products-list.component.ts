@@ -12,13 +12,13 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class ProductsListComponent implements OnInit {
 
+  // Variables
   products: Product[] = [];
   
   // TODO: Esto se saca de Angular Material
-  displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'description', 'price', 'actions'];
 
-
-  constructor (private productsService: ProductsService) { }
+  constructor ( private productsService: ProductsService ) { }
 
   ngOnInit(): void {
     this.fetchProducts();
@@ -26,9 +26,11 @@ export class ProductsListComponent implements OnInit {
 
   // FIXME: LISTA DE INVENTARIO Y DETALLE
   // TODO: Para mandar datos
+  // Obtenemos todos los datos de todos los productos
   fetchProducts(): void {
     this.productsService.getAllProducts()
     .subscribe((items) => {
+      // Obtenemos los datos de los productos almacenados en el backend
       let products = Object.entries(items);
       this.products = products[1][1];
 
@@ -46,10 +48,4 @@ export class ProductsListComponent implements OnInit {
       this.fetchProducts();
     })
   }
-
-  /* numOrder() {
-    for (let i = 0; i < this.products.length; i++) {
-      this.contador = i;
-    }
-  } */
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from '../products/components/product/product.component';
-import { FormProductComponent } from './components/form-product/form-product.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
@@ -27,11 +26,6 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductsListComponent
-      },
-      // FIXME: CREANDO EL FORMULARIO DE PRODUCTOS
-      {
-        path: 'products/create',
-        component: FormProductComponent
       },
       {
         path: 'products/edit/:id',

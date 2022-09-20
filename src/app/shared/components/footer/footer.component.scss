@@ -1,9 +1,11 @@
 // FIXME: INTRODUCCION AL FORMCONTROL
+// Pie de pagina
 footer {
     background-color: #102850;
     padding: 5rem;
     width: 100%;
 
+    // Contenedor del footer
     .container {
         width: 100%;
 
@@ -39,6 +41,7 @@ footer {
             flex-direction: column;
             align-items: center;
 
+            // Contacto - Enviar emai
             div {
                 display: flex;
                 flex-direction: column;
@@ -48,20 +51,20 @@ footer {
                 @media (min-width: 1028px) {
                     flex-direction: row;
                 }
-            }
+
+                input[type="text"] {
+                    outline: none;
+                    border: none;
+                    color: #ffff;
+                    flex: 1;
+                } 
+
+                button {
+                    width: 100%;
     
-            input[type="text"] {
-                outline: none;
-                border: none;
-                color: #ffff;
-                flex: 1;
-            } 
-
-            button {
-                width: 100%;
-
-                @media (min-width: 1028px) {
-                    width: auto;
+                    @media (min-width: 1028px) {
+                        width: auto;
+                    }
                 }
             }
         }

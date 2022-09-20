@@ -1,26 +1,24 @@
 <!-- FIXME: EDITAR UN PRODUCTO A TRAVÉS DE UN FORMULARIO -->
 <!-- TODO: Enlazar el formulario global con formGroup -->
 <!-- TODO: (ngSubmit) cuando le de al click de submit, realice la función saveProduct -->
-<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+<form [formGroup]="form" class="form__admin contenido" (ngSubmit)="saveProduct($event)">
     <mat-card>
         <mat-card-header>
-            <mat-card-title>Producto</mat-card-title>
+            <mat-card-title>Editar Producto</mat-card-title><!-- Titulo -->
         </mat-card-header>
 
         <mat-card-content>
-            <div class="row">
+            <div class="row name__price-price">
                 <div class="col-xs">
                     <mat-form-field>
-                        <input placeholder="Ingrese el nombre" formControlName="title" matInput type="text">
-                    </mat-form-field>
+                        <input placeholder="Ingrese el nombre" formControlName="title" matInput type="text" name="name">
+                    </mat-form-field><!-- Contenedor de los input -->
                 </div>
-            </div>
 
-            <div class="row">
                 <div class="col-xs">
                     <mat-form-field>
                         <input placeholder="Ingrese el precio" formControlName="price" matInput type="number">
-                    </mat-form-field>
+                    </mat-form-field><!-- Contenedor de los input -->
                     
                     <!-- Si el formulario en los precios encuentras errores -->
                     <div *ngIf="priceField?.errors && priceField?.dirty">
@@ -36,14 +34,31 @@
                 <div class="col-xs">
                     <mat-form-field>
                         <textarea placeholder="Ingrese la descripción" formControlName="description" matInput></textarea>
-                    </mat-form-field>
+                    </mat-form-field><!-- Contenedor de los input -->
                 </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs form__image-create">
+                    <img *ngIf="(image$ | async) as image; else elseImg" [src]="image$ | async" alt="">
+                    <ng-template #elseImg>
+                        <img id="image-edit" alt="">
+                    </ng-template>
+                    <p>{{ nameImage }}</p>
+                    <!-- FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE -->
+                    <!-- TODO: uploadFile() - Cuando detectemos un cambio que suba ese archivo -->
+                    <input type="file" id="fileCreate" (change)="uploadFile($event)" accept="image/*">
+                    <label for="fileCreate">
+                        <fa-icon [icon]="faImage"></fa-icon>
+                        Escoge una imagen
+                    </label>
+                </div><!-- Subida y muestra de Imagen -->
             </div>
         </mat-card-content>
 
         <mat-card-actions>
             <!-- TODO: disabled - deshabilitará el botón si el formulario no es valido-->
-            <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
-        </mat-card-actions><!-- Acciones-->
-    </mat-card>
-</form>
+            <button color="primary" class="button btn-blue" [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+        </mat-card-actions><!-- Acciones -->
+    </mat-card><!-- Contenedor de la tarjeta -->
+</form><!-- Formulario del admin -->

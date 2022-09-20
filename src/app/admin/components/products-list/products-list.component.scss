@@ -1,4 +1,65 @@
-.products-table {
-    width: 96%;
-    margin: 2%;
+// Contenedor de la tabla
+.main__table {
+    max-width: 100%;
+    overflow-x: scroll;
+
+    @media (min-width: 1024px) {
+        overflow: initial;
+        max-width: auto;
+    }
+
+    // Scroll
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    &::-webkit-scrollbar:vertical {
+        width: 7px;
+    }
+    
+    &::-webkit-scrollbar-button:increment,
+    &::-webkit-scrollbar-button {
+        display: none;
+    } 
+    
+    &::-webkit-scrollbar:horizontal {
+        height: 7px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #c2c2c2ad;
+        border-radius: 20px;
+        border: 2px solid transparent;
+        padding: 2rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+        border-radius: 20px;  
+    }
+
+    // Tabla
+    .products-table {
+        width: 96%;
+        margin: 2% auto;
+
+        th, td {
+            text-align: center;
+            font-size: 1.6rem;
+            padding: 2rem;
+        }
+
+        // Acciones
+        .mat-cell.cdk-cell.cdk-column-actions.mat-column-actions.ng-star-inserted {
+            display: flex;
+            justify-content: center;
+
+            button {
+                width: auto;
+
+                &:first-child {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
 }

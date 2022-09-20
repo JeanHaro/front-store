@@ -2,47 +2,64 @@
 <mat-stepper linear #stepper class="contenido">
     <mat-step>
         <ng-template matStepLabel>Sus productos</ng-template>
-        <!--  -->
+
         <div *ngIf="(products$ | async) as products">
             <!-- TODO: Si es que no hay productos, se mostrará -->
-            <p *ngIf="products.length === 0">No hay productos</p>
+            <p *ngIf="products.length === 0; else elseCart">No hay productos</p>
 
-            <!-- Muestra todos los nombres de los productos suscritos -->
-            <!-- <ul>
-                <li *ngFor="let product of products">
-                    {{ product.title }}
-                </li>
-            </ul> -->
-
-            <div class="row" *ngFor="let product of products">
-                <div class="col-xs-12 col-sm-2 col-md-2">
-                    <div class="box">
-                        <img src="image" [src]="product.image" alt="">
-                    </div>
-                </div><!-- Imagen -->
-
-                <div class="col-xs-12 col-sm-5 col-md-5">
-                    <div class="box">
-                        {{ product.title }}
-                    </div>
-                </div><!-- Nombre  -->
-
-                <div class="col-xs-12 col-sm-5 col-md-5">
-                    <div class="box">
-                        {{ product.price }}
-                    </div>
-                </div><!-- Precio -->
-            </div>
+            <ng-template #elseCart>
+                <div class="cart__container">
+                    <div class="cart__product">
+                        <div class="cart__product-content" *ngFor="let product of products">
+                            <div class="product__content-top">
+                                <div class="col-xs-12 col-sm-5 col-md-5 cart__image">
+                                    <div class="box">
+                                        <img src="image" [src]="product.image" alt="">
+                                    </div>
+                                </div><!-- Imagen -->
+                
+                                <div class="col-xs-12 col-sm-5 col-md-5 cart__data">
+                                    <div class="box">
+                                        <span>Nombre:</span> {{ product.title }}
+                                    </div><!-- Nombre  -->
+                    
+                                    <div class="box">
+                                        <span>Precio:</span> {{ product.price | currency }}
+                                    </div><!-- Precio -->
+                
+                                    <div class="box">
+                                        <span>Descripción:</span> {{ product.description | slice:0:13 }}...
+                                    </div><!-- Descripción -->
+                                </div><!-- Datos del producto -->
+                            </div><!-- Detalles del producto -->
+    
+                            <div class="col-xs-12 col-sm-5 col-md-5 cart__button">
+                                <div class="box">
+                                    <button mat-raised-button class="button btn-green">Ver detalle</button>
+                                </div>
+                                
+                                <div class="box">
+                                    <button mat-raised-button class="button btn-red" color="warn">Eliminar</button>
+                                </div>
+                            </div><!-- Botones -->
+                        </div><!-- Info de los productos -->
+                    </div><!-- Productos -->
+        
+                    <div class="cart__information">
+                        <P>Precio total</P>
+                    </div><!-- Precio total -->
+                </div><!-- Contenido de sus productos -->
+            </ng-template>
         </div>
-    </mat-step>
+    </mat-step><!-- Sus productos -->
 
     <mat-step>
         <ng-template matStepLabel>Datos personales</ng-template>
         <h1>Contenido</h1>
-    </mat-step>
+    </mat-step><!-- Datos Personales -->
 
     <mat-step>
         <ng-template matStepLabel>Pago</ng-template>
         <h1>Contenido</h1>
-    </mat-step>
-</mat-stepper>
+    </mat-step><!-- Pago -->
+</mat-stepper><!-- Contenedor del carrito -->

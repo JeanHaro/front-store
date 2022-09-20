@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// FIXME: INSTALAR ANGULAR FIREBASE Y CONFIGURAR FIREBASE AUTH
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+// Formulario
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 // Servicios
 import { AuthService } from 'src/app/core/services/auth/auth.service';
@@ -13,29 +14,35 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
+  // Variable
   form!: FormGroup;
 
   constructor (
-    private formBuilder: FormBuilder,
+    private authService: AuthService, 
     private router: Router,
-    private authService: AuthService
-  ) { 
-    this.buildForm();
+    private formBuilder: FormBuilder) { 
+      this.buildForm();
   }
 
   ngOnInit(): void {
   }
 
+  // Registrarse
   register (event: Event) {
     event.preventDefault();
-    // TODO: Si el email y la contraseña es correcta se podrá registrar
+
+    // TODO: Si el formulario es valido
     if (this.form.valid) {
       const value = this.form.value;
-      // Creará el usuario
+
+      // Creará al usuario
       this.authService.createUser(value.email, value.password)
       .then(() => {
         // Navegará a la carpeta de iniciar sesión
         this.router.navigate(['auth/login']);
+      })
+      .catch((err) => {
+        alert(err);
       })
     }
   }

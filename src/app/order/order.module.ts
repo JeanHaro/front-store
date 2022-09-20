@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Componente
 import { OrderComponent } from './components/order/order.component';
 
 // Modulos

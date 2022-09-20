@@ -1,9 +1,11 @@
 // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
 // FIXME: CREANDO RUTAS EN ANGULAR
+// Contenedor de los productos
 .product-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 1rem;
+    
     padding: 2rem 1rem;
     margin: auto;
 

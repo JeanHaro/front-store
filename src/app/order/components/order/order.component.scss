@@ -1,0 +1,189 @@
+:host {
+    flex: 1;
+}
+
+// Simple Plan - Shut Up! 
+mat-stepper {
+    margin: auto;
+
+    // Contenido de sus productos
+    .cart__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: 880px) {
+            flex-direction: row;
+        }
+
+        // Productos
+        .cart__product {
+            flex-basis: calc(60% - 1rem);
+            display: flex;
+            flex-direction: column;
+
+            padding: 2rem;
+            background-color: #727272;
+            border-radius: 0.5rem;
+            max-height: 50rem;
+            overflow-y: scroll;
+
+            position: relative;
+
+            @media (min-width: 1600px) {
+                flex-basis: calc(50% - 1rem);
+            }
+
+            // Scroll
+            &::-webkit-scrollbar {
+                -webkit-appearance: none;
+            }
+            
+            &::-webkit-scrollbar:vertical {
+                width: 7px;
+            }
+            
+            &::-webkit-scrollbar-button:increment,
+            &::-webkit-scrollbar-button {
+                display: none;
+            } 
+            
+            &::-webkit-scrollbar:horizontal {
+                height: 10px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background-color: #c2c2c2ad;
+                border-radius: 20px;
+                border: 2px solid transparent;
+                padding: 2rem;
+            }
+            
+            &::-webkit-scrollbar-track {
+                border-radius: 20px;  
+            }
+
+            // Info de los productos
+            .cart__product-content {
+                background-color: #f0f0f0;
+                border-radius: 0.5rem;
+                margin-bottom: 2rem;
+                border: 0.5rem solid transparent;
+                min-height: 40rem;
+                overflow: hidden;
+        
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media (min-width: 320px) {
+                    min-height: 38rem;
+                }
+
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                    min-height: 14rem;
+                }
+        
+                &:last-child {
+                    margin-bottom: 0;
+                }
+    
+                &:hover {
+                    border: 0.5rem solid rgb(70, 68, 68);
+                }
+    
+                // Detalles del producto
+                .product__content-top {
+                    display: flex;
+                    flex-direction: column;
+
+                    @media (min-width: 768px) {
+                        flex-direction: row;
+                        flex: 1;
+                    }
+
+                    // Imagen
+                    .cart__image {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background-color: #b8b8b8;
+                        min-height: 15rem;
+        
+                        img {
+                            max-height: 10rem;
+                            object-fit: cover;
+                            filter: drop-shadow(4px 4px 2px #2e2e2d);
+                        }
+    
+                        @media (min-width: 768px) {
+                            flex: 1;
+
+                            img {
+                                max-height: 10rem;
+                            }
+                        }
+                    }
+
+                    // Datos del producto
+                    .cart__data {
+                        padding: 2rem 1rem;
+    
+                        span {
+                            font-weight: bold;
+                        }
+
+                        @media (min-width: 768px) {
+                            flex: 1;
+
+                            padding: 2rem;
+                            width: 100%;
+                        }
+
+                        @media (min-width: 880px) {
+                            padding: 1rem;
+                        }
+                    }
+                }    
+
+                // Botones
+                .cart__button {
+                    display: flex;
+                    flex-direction: column;
+
+                    div {
+                        margin-bottom: 1rem;
+                    }
+
+                    @media (min-width: 768px) {
+                        justify-content: space-around;
+
+                        div {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // Precio total 
+        .cart__information {
+            flex-basis: calc(40% - 1rem);
+            
+            background-color: #f0f0f0;
+            border-radius: 1rem;
+            padding: 3rem;
+            margin-top: 2rem;
+
+            @media (min-width: 880px) {
+                margin-top: 0;
+            }
+
+            @media (min-width: 1600px) {
+                flex-basis: calc(50% - 1rem);
+            }
+        }
+    }
+}

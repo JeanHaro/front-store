@@ -111,8 +111,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "store:build:production",
-            "firebaseProject": "minitienda-42f9f",
-            "firebaseHostingSite": "minitienda-42f9f"
+            "firebaseProject": "minitienda-4235b",
+            "firebaseHostingSite": "minitienda-4235b"
           }
         }
       }

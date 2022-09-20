@@ -1,100 +1,64 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>Shipping Information</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Company" formControlName="company">
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="First name" formControlName="firstName">
-            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
-              First name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Last name" formControlName="lastName">
-            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
-              Last name is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Address" formControlName="address"></textarea>
-            <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
-              Address is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row" *ngIf="!hasUnitNumber">
-        <div class="col">
-          <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
-            + Add C/O, Apt, Suite, Unit
-          </button>
-        </div>
-      </div>
-      <div class="row" *ngIf="hasUnitNumber">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="City" formControlName="city">
-            <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
-              City is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <mat-select placeholder="State" formControlName="state">
-              <mat-option *ngFor="let state of states" [value]="state.abbreviation">
-                {{ state.name }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
-              State is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-radio-group formControlName="shipping">
-            <mat-radio-button value="free">Free Shipping</mat-radio-button>
-            <mat-radio-button value="priority">Priority Shipping</mat-radio-button>
-            <mat-radio-button value="nextday">Next Day Shipping</mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-card-actions>
-  </mat-card>
-</form>
+<!-- FIXME: CREANDO EL FORMULARIO DE PRODUCTOS -->
+<!-- TODO: Enlazar el formulario global con formGroup -->
+<!-- FIXME: AJUSTAR ESTILOS EN UN FORMULARIO -->
+<!-- TODO: (ngSubmit) cuando le de al click de submit, realice la función saveProduct -->
+<form [formGroup]="form" class="form__admin" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Crear producto</mat-card-title><!-- Titulo -->
+        </mat-card-header>
+
+        <mat-card-content>
+            <div class="row name__price-price">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Ingrese el nombre" formControlName="title" matInput type="text">
+                    </mat-form-field><!-- Contenedor de los input -->
+                </div>
+
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Ingrese el precio" formControlName="price" matInput type="number">
+                    </mat-form-field><!-- Contenedor de los input -->
+                    
+                    <!-- Si el formulario en los precios encuentras errores -->
+                    <div *ngIf="priceField?.errors && priceField?.dirty">
+                        <!-- Si es invalido por configuración del Validators -->
+                        <mat-error *ngIf="priceField?.hasError('price_invalid')">No te debes pasar de 10000</mat-error>
+                        <!-- Si está vacío-->
+                        <mat-error *ngIf="priceField?.hasError('required')">El campo es requerido</mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea placeholder="Ingrese la descripción" formControlName="description" matInput></textarea>
+                    </mat-form-field><!-- Contenedor de los input -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs form__image-create">
+                    <img *ngIf="(image$ | async) as image" [src]="image$ | async" alt="">
+                    <p>{{ nameImage }}</p>
+                    <!-- FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE -->
+                    <!-- TODO: uploadFile() - Cuando detectemos un cambio que suba ese archivo -->
+                    <input type="file" id="fileCreate" (change)="uploadFile($event)" accept="image/*">
+                    <label for="fileCreate">
+                        <fa-icon [icon]="faImage"></fa-icon>
+                        Escoge una imagen
+                    </label>
+                </div><!-- Subida y muestra de Imagen -->
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions class="col-xs">
+            <div class="col-xs">
+                <!-- TODO: disabled - deshabilitará el botón si el formulario no es valido-->
+                <button [disabled]="form.invalid" color="primary" class="button btn-blue" mat-raised-button type="submit">Guardar</button>
+            </div>
+        </mat-card-actions><!-- Acciones-->
+    </mat-card><!-- Contenedor de la tarjeta -->
+</form><!-- Formulario del admin -->

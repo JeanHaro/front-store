@@ -8,8 +8,8 @@ import { RegisterComponent } from './components/register/register.component';
 
 // Modulos
 import { SharedModule } from '../shared/shared.module';
-import { AuthRoutingModule } from './auth-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   // Acá estarán los componentes

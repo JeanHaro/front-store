@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 
 //  FIXME: QUE SON LOS COMPONENTES Y DECORADORES
 // TODO: Componentes - Para que Angular reconozca que es un componente como parte de su aplicación
-import { CartComponent } from './cart/cart.component';
 import { LayoutComponent } from './layout/layout.component';
 
 // Modulos
@@ -26,7 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 import { SharedModule } from './shared/shared.module'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
 // Environments
 import { environment } from '../environments/environment';
@@ -34,11 +33,11 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CartComponent,
     LayoutComponent,
   ],
   imports: [
@@ -54,7 +53,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     AngularFireStorageModule,
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

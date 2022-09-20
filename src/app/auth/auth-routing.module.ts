@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Componentes
@@ -9,6 +9,11 @@ import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   // Ruta inicial
   // Es el elemento inicial con el que va a iniciar el modulo
+  {
+    path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full'
+  },
   {
     path: 'login',
     component: LoginComponent

@@ -3,7 +3,6 @@ import { AbstractControl } from "@angular/forms";
 
 export class MyValidators {
     // Métodos estáticos
-
     // Precios menores a 
     static isPriceValid (control: AbstractControl) {
         // Valor actual

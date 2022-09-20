@@ -1,29 +1,40 @@
-<form [formGroup]="form" (ngSubmit)="login($event)">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Login</mat-card-title>
-        </mat-card-header>
-
-        <mat-card-content>
-            <div class="row">
-                <div class="col-xs">
-                    <mat-form-field>
-                        <input placeholder="email" formControlName="email" matInput type="email">
-                    </mat-form-field>
+<form [formGroup]="form" class="form__auth" (ngSubmit)="login($event)">
+    <div class="container">
+        <div class="form__content-img">
+            <img src="../../../../assets/images/login.jpg" alt="Imagen login">
+        </div><!-- Contenido de la imagen -->
+    
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Iniciar Sesión</mat-card-title><!-- Titulo -->
+            </mat-card-header>
+    
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <input placeholder="Correo electrónico" formControlName="email" matInput type="email">
+                        </mat-form-field><!-- Contenedor input -->
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs">
-                    <mat-form-field>
-                        <input placeholder="password" formControlName="password" matInput type="password">
-                    </mat-form-field>
+    
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <input placeholder="Contraseña" formControlName="password" matInput type="password" autocomplete="on">
+                        </mat-form-field><!-- Contenedor input -->
+                    </div>
                 </div>
-            </div>
-        </mat-card-content>
+            </mat-card-content><!-- Conteneder de los Inputs -->
 
-        <mat-card-actions>
-            <button [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
-        </mat-card-actions>
-    </mat-card>
-</form>
+            <div class="form__check-in">
+                <p>¿No tienes cuenta?</p> 
+                <a routerLink="/auth/register">Regístrate</a>
+            </div><!-- Enlace auth -->
+    
+            <mat-card-actions>
+                <button class="button btn-blue" [disabled]="form.invalid" mat-raised-button color="primary" type="submit">Ingresar</button>
+            </mat-card-actions><!-- Acciones -->
+        </mat-card><!-- Contenido del formulario -->
+    </div><!-- Contenedor del formulario -->
+</form><!-- Formulario auth -->

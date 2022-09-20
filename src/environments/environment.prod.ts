@@ -1,11 +1,12 @@
 export const environment = {
   firebase: {
-    projectId: 'minitienda-42f9f',
-    appId: '1:1022644268964:web:f1e5b0bc29cc9fe70f5b31',
-    storageBucket: 'minitienda-42f9f.appspot.com',
-    apiKey: 'AIzaSyBIilDDDTMo_ChEJZ8fonRFdn2eqFwpCyU',
-    authDomain: 'minitienda-42f9f.firebaseapp.com',
-    messagingSenderId: '1022644268964',
+    projectId: 'minitienda-4235b',
+    appId: '1:137506754845:web:8c93c22494291689d691f4',
+    storageBucket: 'minitienda-4235b.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyCeiVfhzlfdp1k1Q2nTKOWWTHcXQgelRfQ',
+    authDomain: 'minitienda-4235b.firebaseapp.com',
+    messagingSenderId: '137506754845',
   },
   production: true,
   url_api: 'http://localhost:3001/api'

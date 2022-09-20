@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
+// Rxjs
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+
 // FIXME: IMPLEMENTANDO AUTH Y GUARDS
 import { Router } from '@angular/router';
 
 // Servicios
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 
+// Font Awesome
 import { 
   faPlus,
-  faEye
+  faEye,
+  faRightFromBracket
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -35,6 +40,7 @@ export class NavComponent {
   // Iconos
   faPlus = faPlus;
   faEye = faEye;
+  faRightFromBracket = faRightFromBracket;
 
   // Cerrar sesión
   logout() {

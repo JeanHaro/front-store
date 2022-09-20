@@ -6,22 +6,22 @@
     <!-- FIXME: CONSTRUYENDO UNA DIRECTIVA PROPIA -->
     <!-- TODO: appHighlight - da un subrayado al elemento -->
     <h3 appHighlight>{{ product.title | uppercase }}</h3>
-</div>
+</div><!-- Nombre del producto -->
 
 <div>
     <!-- TODO: currency - automáticamente le va a colocar un signo pesos con sus decimales -->
     <strong>{{ product.price | currency }}</strong>
-</div>
+</div><!-- Precio del producto -->
 
-<div>
+<div class="product__content-img">
     <!-- TODO: [src] - para obtener valores de las variables  -->
     <img [src]="product.image" alt="" />
-</div>
+</div><!-- Imagen del producto -->
 
 <div>
     <!-- TODO: slice - es un pipe para cortar texto, cortará desde el 0 hasta el 10 caracteres -->
-    <p>{{ product.description | slice:0:10 }}</p>
-</div>
+    <p>{{ product.description | slice:0:100 }}</p>
+</div><!-- Descripción del producto -->
 
 <!-- <div> -->
     <!-- TODO: date - es para mostrar mejor la fecha como por ejemp: "Aug 19, 2022" -->
@@ -36,4 +36,4 @@
     <!-- FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO -->
     <!-- TODO: La primera parte será products, y la segunda es para concatenar el product.id con el /products -->
     <a class="button btn-green" mat-button [routerLink]="['/products', product.uid]">Ver detalle</a>
-</div>
+</div><!-- Botones del producto -->

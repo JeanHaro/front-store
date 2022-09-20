@@ -6,9 +6,23 @@
           "minitienda-42f9f"
         ]
       }
+    },
+    "ministore-91bd8": {
+      "hosting": {
+        "store": [
+          "ministore-91bd8"
+        ]
+      }
+    },
+    "minitienda-4235b": {
+      "hosting": {
+        "store": [
+          "minitienda-4235b"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "minitienda-42f9f"
+    "default": "minitienda-4235b"
   }
 }
