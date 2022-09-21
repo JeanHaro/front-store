@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
-// FIXME: CIERRE DE EJERCICIO DE DETALLE
 import { Product } from 'src/app/core/models/product.model';
 
 @Component({
@@ -24,7 +23,6 @@ export class ProductsListComponent implements OnInit {
     this.fetchProducts();
   }
 
-  // FIXME: LISTA DE INVENTARIO Y DETALLE
   // TODO: Para mandar datos
   // Obtenemos todos los datos de todos los productos
   fetchProducts(): void {

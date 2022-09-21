@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// FIXME: CREANDO RUTAS EN ANGULAR
 // Interface
 import { Product } from 'src/app/core/models/product.model';
 
@@ -20,7 +19,6 @@ export class DemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // FIXME: USO DE ngFor PARA RECORRER OBJETOS
   // Productos
   products: Product[] = [{
       uid: '1',
@@ -66,12 +64,10 @@ export class DemoComponent implements OnInit {
     },
   ];
 
-  // FIXME: USO DE INPUTS Y OUTPUTS
   clickProduct (id: number) {
     console.log('product');
     console.log(id);
   }
 
-  // FIXME: CONSTRUYENDO UN PROPIO PIPE
   power = 10;
 }

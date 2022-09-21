@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Reactivo
 import { BehaviorSubject } from 'rxjs'
 

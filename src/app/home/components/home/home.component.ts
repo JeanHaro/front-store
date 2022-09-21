@@ -1,4 +1,3 @@
-// FIXME: CREANDO LA PÁGINA HOME DE LA TIENDA
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 // Swiper

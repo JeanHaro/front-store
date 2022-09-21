@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-// FIXME: CREANDO EL MÓDULO DEL WEBSITE CON VISTAS ANIDADAS
 // Layout
 import { LayoutComponent } from './layout/layout.component';
 
-// FIXME: GUARDIANES
 // Guardian
 import { AdminGuard } from './admin.guard';
 
-// FIXME: CREANDO RUTAS EN ANGULAR
 // TODO: Creando rutas en el Array vacío []
 const routes: Routes = [
   {
@@ -35,7 +32,6 @@ const routes: Routes = [
         componentes de nuestra página */
         // component: HomeComponent
         
-        // FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
         // TODO: Cargar un módulo dinámicamente
         // TODO: then - nos dará una promesa, nos va a devolver el módulo del HomeModule
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
@@ -52,26 +48,22 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
-      // FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC
       {
         path: 'order',
         loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
       }
     ]
   },
-  // FIXME: USANDO routerLink Y routerActive
   {
     path: 'demo',
     loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
   },
   {
     path: 'admin',
-    // FIXME: IMPLEMENTANDO AUTH Y GUARDS
     canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
-    // FIXME: USANDO routerLink Y routerActive
     // TODO: Con doble asterisco es que no hubo match y mostrará el componente page-not-found
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)

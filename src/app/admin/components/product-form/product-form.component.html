@@ -1,6 +1,4 @@
-<!-- FIXME: CREANDO EL FORMULARIO DE PRODUCTOS -->
 <!-- TODO: Enlazar el formulario global con formGroup -->
-<!-- FIXME: AJUSTAR ESTILOS EN UN FORMULARIO -->
 <!-- TODO: (ngSubmit) cuando le de al click de submit, realice la función saveProduct -->
 <form [formGroup]="form" class="form__admin" (ngSubmit)="saveProduct($event)">
     <mat-card>
@@ -43,7 +41,7 @@
                 <div class="col-xs form__image-create">
                     <img *ngIf="(image$ | async) as image" [src]="image$ | async" alt="">
                     <p>{{ nameImage }}</p>
-                    <!-- FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE -->
+
                     <!-- TODO: uploadFile() - Cuando detectemos un cambio que suba ese archivo -->
                     <input type="file" id="fileCreate" (change)="uploadFile($event)" accept="image/*">
                     <label for="fileCreate">

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-// FIXME: CREANDO EL FORMULARIO DE PRODUCTOS
 // TODO: FormGroup - es un grupo de controles
 // TODO: FormBuilder - es una extensión de Angular, que nos sirve para crear ese grupo rápidamente
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-// FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE
 // Firebase
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 
@@ -16,7 +14,6 @@ import { Observable } from 'rxjs';
 // Servicios
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
-// FIXME: Validaciones personalizadas
 // Utils
 import { MyValidators } from 'src/app/utils/validators';
 
@@ -47,7 +44,6 @@ export class ProductFormComponent {
   ngOnInit(): void {
   }
 
-  // FIXME: AJUSTAR ESTILOS EN UN FORMULARIO
   saveProduct (event: Event) {
     // preventDefault() - quite la acción por defecto, para que no recargue la página
     event.preventDefault();
@@ -66,7 +62,6 @@ export class ProductFormComponent {
     console.log(this.form.value);
   }
 
-  // FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE
   // TODO: Cargar archivo
   uploadFile (event: Event) {
     // Archivo

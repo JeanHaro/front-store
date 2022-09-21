@@ -5,7 +5,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
-// FIXME: IMPLEMENTANDO AUTH Y GUARDS
 import { Router } from '@angular/router';
 
 // Servicios
@@ -25,6 +24,7 @@ import {
 })
 export class NavComponent {
 
+  // Angular Material
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),

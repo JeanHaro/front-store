@@ -1,4 +1,3 @@
-<!-- FIXME: USANDO routerLink Y routerActive -->
 <div class="header min-width">
     <div class="header__title">
         <h1 routerLink="/home">MiniTienda</h1>
@@ -14,11 +13,7 @@
             <a mat-button class="btn-nav" routerLink="/products" routerLinkActive="active">Productos</a>
             <a mat-button class="btn-nav" routerLink="/contact" routerLinkActive="active">Contacto</a>
             <a mat-button class="btn-nav" routerLink="/auth" routerLinkActive="active">Iniciar sesión</a>
-            <!-- FIXME: CREANDO EL HEADER -->
-            <!-- FIXME: AÑADIENDO PRODUCTOS AL CARRITO -->
-            <!-- FIXME: USA UN PIPE PARA HACER UN CONTADOR DE PRODUCTOS -->
             <!-- TODO: async - el automáticamente hará la suscripción, cuando el elemento ya no se usa va a desuscribirse -->
-            <!-- FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC -->
             <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" class="btn-green">
                 <mat-icon>shopping_cart</mat-icon>
                 <span>Carrito</span>

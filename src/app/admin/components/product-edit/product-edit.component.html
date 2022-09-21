@@ -1,4 +1,3 @@
-<!-- FIXME: EDITAR UN PRODUCTO A TRAVÉS DE UN FORMULARIO -->
 <!-- TODO: Enlazar el formulario global con formGroup -->
 <!-- TODO: (ngSubmit) cuando le de al click de submit, realice la función saveProduct -->
 <form [formGroup]="form" class="form__admin contenido" (ngSubmit)="saveProduct($event)">
@@ -45,7 +44,7 @@
                         <img id="image-edit" alt="">
                     </ng-template>
                     <p>{{ nameImage }}</p>
-                    <!-- FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE -->
+                    
                     <!-- TODO: uploadFile() - Cuando detectemos un cambio que suba ese archivo -->
                     <input type="file" id="fileCreate" (change)="uploadFile($event)" accept="image/*">
                     <label for="fileCreate">

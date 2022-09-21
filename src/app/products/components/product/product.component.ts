@@ -1,5 +1,3 @@
-// FIXME: QUE SON LOS COMPONENTES Y DECORADORES
-
 // TODO: Decoradores - Es un contexto a los elementos o artefactos de Angular
 /* TODO: Un decorador es la manera en que Angular pueda saber que esta clase que tipo de error va a cumplir, si va a ser
 un componente, si va ser un servicio, si va ser un pype, en este caso como vamos hacer un componente vamos a usar 
@@ -19,7 +17,6 @@ import {
 // Modelo
 import { Product } from "../../../core/models/product.model";
 
-// FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Servicios
 import { CartService } from "src/app/core/services/cart/cart.service";
 
@@ -32,14 +29,12 @@ import { CartService } from "src/app/core/services/cart/cart.service";
     selector: 'app-product',
     // TODO: A que archivo HTML vamos a llamar o que archivo esta enlazado a este componente
     templateUrl: './product.component.html',
-    // FIXME: ESTILOS PARA MOSTRAR LA LISTA DE PRODUCTOS
     // Estilos
     styleUrls: ['./product.component.scss']
 })
 
 export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     // Variable tipo Product (Interfaz)
-    // FIXME: USO DE INPUTS Y OUTPUTS
     // TODO: Automáticamente el componente que tenemos va a recibir una propiedad desde otro componente
     @Input() product!: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
@@ -55,7 +50,6 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         this.cartService.addCart(this.product);
     }
 
-    // FIXME: CICLO DE VIDA DE LOS COMPONENTES
     /* TODO: Acá es donde se construye nuestro elemento o nuestro productComponent y Angular hace referencia a el y lo 
     pone en interfaz */
     constructor (private cartService: CartService) {
@@ -90,7 +84,6 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
         console.log('5, ngOnDestroy');
     }
 
-    // FIXME: USANDO LOS PIPES DE ANGULAR
     // Fecha actual
     today = new Date();
 }

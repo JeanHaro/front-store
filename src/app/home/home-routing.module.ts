@@ -1,8 +1,6 @@
-// FIXME: PREPARAR EL PROYECTO PARA LAZY LOADING
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
 
-// FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
 // Componentes
 import { HomeComponent } from "./components/home/home.component";
 

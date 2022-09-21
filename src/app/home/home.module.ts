@@ -1,4 +1,3 @@
-// FIXME: PREPARAR EL PROYECTO PARA LAZY LOADING
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
@@ -16,7 +15,6 @@ import { HomeRoutingModule } from "./home-routing.module";
         HomeComponent
     ],
     // TODO: El routing se importa
-    // FIXME: IMPLEMENTACIÓN DEL LAZY LOADING
     imports: [
         CommonModule,
         HomeRoutingModule

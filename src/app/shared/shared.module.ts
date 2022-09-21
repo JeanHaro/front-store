@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-// FIXME: INTRODUCCION AL FORMCONTROL
 import { ReactiveFormsModule } from '@angular/forms';
 
-// FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 // Componentes  
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -17,7 +15,6 @@ import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 
 // Modulos
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// FIXME: CREANDO EL HEADER
 import { MaterialModule } from '../material/material.module';
 
 @NgModule({

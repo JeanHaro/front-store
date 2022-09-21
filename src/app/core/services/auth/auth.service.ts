@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// FIXME: INSTALAR ANGULAR FIREBASE Y CONFIGURAR FIREBASE AUTH
 // Auth para login y register de Firebase
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
@@ -17,7 +16,6 @@ export class AuthService {
     return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  // FIXME: IMPLEMENTANDO AUTH Y GUARDS
   // Iniciar sesión
   login (email: string, password: string) {
     // TODO: Iniciar sesión con email and password

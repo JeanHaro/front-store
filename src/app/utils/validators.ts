@@ -1,4 +1,3 @@
-// FIXME: Validaciones personalizadas
 import { AbstractControl } from "@angular/forms";
 
 export class MyValidators {

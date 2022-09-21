@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// FIXME: CREANDO LA PAGINA DE LA ORDEN Y USO DE ASYNC
 // Observaciones
 import { Observable } from 'rxjs';
 

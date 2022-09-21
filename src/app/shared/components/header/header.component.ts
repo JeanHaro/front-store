@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-// FIXME: USA UN PIPE PARA HACER UN CONTADOR DE PRODUCTOS
 // TODO: map - transformar el valor que nos llega por uno nuevo
 import { map } from 'rxjs/operators';
 
@@ -10,7 +9,6 @@ import {
   faClose 
 } from '@fortawesome/free-solid-svg-icons';
 
-// FIXME: AÑADIENDO PRODUCTOS AL CARRITO
 // Servicio
 import { CartService } from 'src/app/core/services/cart/cart.service';
 

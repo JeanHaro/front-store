@@ -1,4 +1,3 @@
-// FIXME: CREANDO VISTAS CON ANGULAR SHEMATIC
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

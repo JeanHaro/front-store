@@ -11,7 +11,6 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// FIXME: INSTALANDO ANGULAR MATERIAL
 // TODO: Material Module - Angular Material
 import { MaterialModule } from '../material/material.module';
 

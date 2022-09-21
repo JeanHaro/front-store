@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  // FIXME: CREANDO LA PÁGINA HOME DE LA TIENDA
   images: string [] = [
     'assets/images/banner-1.jpg',
     'assets/images/banner-2.jpg',

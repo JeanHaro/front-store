@@ -1,4 +1,3 @@
-// FIXME: EDITAR UN PRODUCTO A TRAVÉS DE UN FORMULARIO
 import { Component, OnInit } from '@angular/core';
 
 // TODO: FormGroup - es un grupo de controles
@@ -80,7 +79,6 @@ export class ProductEditComponent implements OnInit {
     }
   }
 
-  // FIXME: SUBIENDO UNA IMAGEN A FIREBASE STORAGE
   // TODO: Cargar archivo
   uploadFile (event: Event) {
     // Archivo
@@ -123,7 +121,7 @@ export class ProductEditComponent implements OnInit {
     })
   }
 
-  // Obtener datos
+  // Manda los datos al formulario
   dataForm() {
     this.form = this.formBuilder.group({
       title: [this.product.title, [Validators.required]],
@@ -147,6 +145,7 @@ export class ProductEditComponent implements OnInit {
     this.productService.getProduct(id)
     // Subscribirnos para recibir la respuesta
     .subscribe(product => {
+      // Obtenemos los valores del producto a través del Backend
       const products = Object.entries(product);
       this.product = products[1][1];
       this.dataForm();

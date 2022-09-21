@@ -1,9 +1,6 @@
-<!-- FIXME: QUE SON LOS COMPONENTES Y DECORADORES -->
 <!-- TODO: Traemos valores del Objeto -->
 <div>
-    <!-- FIXME: USANDO LOS PIPES DE ANGULAR -->
     <!-- TODO: uppercase - es un pipe -->
-    <!-- FIXME: CONSTRUYENDO UNA DIRECTIVA PROPIA -->
     <!-- TODO: appHighlight - da un subrayado al elemento -->
     <h3 appHighlight>{{ product.title | uppercase }}</h3>
 </div><!-- Nombre del producto -->
@@ -23,17 +20,9 @@
     <p>{{ product.description | slice:0:100 }}</p>
 </div><!-- Descripción del producto -->
 
-<!-- <div> -->
-    <!-- TODO: date - es para mostrar mejor la fecha como por ejemp: "Aug 19, 2022" -->
-    <!-- TODO: date:'medium' - es para mostrar la fecha y la hora como por ejem: "Aug 19, 2022, 1:42:10 PM" -->
-    <!-- TODO: date:'HH:mm' - es para mostrar solo la hora, como por ejemp: "13:43" -->
-    <!-- <p>{{ today | date:'HH:mm' }}</p>
-</div> -->
-
 <div class="product__button">
     <!-- TODO: (click) - evento click, cuando hacemos click realizará la función o método que se le otorgó -->
     <button class="button btn-blue" (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
-    <!-- FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO -->
     <!-- TODO: La primera parte será products, y la segunda es para concatenar el product.id con el /products -->
     <a class="button btn-green" mat-button [routerLink]="['/products', product.uid]">Ver detalle</a>
 </div><!-- Botones del producto -->

@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-// FIXME: CREANDO EL DETALLE DE CADA PRODUCTO
 // TODO: ActiveRoute - inyección de dependencia
 // TODO: Params - es de tipado
 import { ActivatedRoute, Params } from '@angular/router';
 
-// FIXME: CREANDO UN SHARED MODULE Y CORE MODULE
 // TODO: Servicios
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
-// FIXME: ELABORACIÓN DE LA PÁGINA DE DETALLE DE PRODUCTO
 // TODO: Interfaces
 import { Product } from 'src/app/core/models/product.model';
 
@@ -40,7 +37,6 @@ export class ProductDetailComponent implements OnInit {
       // TODO: Todos los parámetros que tenga ese componente
       // console.log(params);
       const id = params["id"];
-      // FIXME: HACIENDO UNA SOLICITUD GET DESDE EL SERVICIO
       this.fetchProduct(id);
       // console.log(id);
       // TODO: Lo guardamos en una variable constante product

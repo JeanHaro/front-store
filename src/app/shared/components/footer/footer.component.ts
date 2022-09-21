@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// FIXME: INTRODUCCION AL FORMCONTROL
 // Formularios
 import { FormControl, Validators } from '@angular/forms';
 
@@ -23,12 +22,6 @@ export class FooterComponent implements OnInit {
       /* Validators.minLength(4), 
       Validators.maxLength(10) */
     ]);
-
-    // Para controlar los datos
-    /* this.emailField.valueChanges
-    .subscribe(value => {
-      console.log(value);
-    }) */
   }
 
   ngOnInit(): void {
