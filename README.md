@@ -1,27 +1,45 @@
-# Store
+# Frontend-Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+Proyecto generado con Angular version 14.1.2.
 
-## Development server
+## Instalación de archivos necesarios
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para instalar los archivos necesarios para este proyecto, utiliza el comando:
+```
+npm install
+```
+## Proyecto
 
-## Code scaffolding
+La página tiene como nombre MiniTienda y se basa de ventas de productos, en donde uno se puede registrar y subir los productos que quieras vender. El proyecto aún no está concluido, pero se va ir realizando con el paso del tiempo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Que utiliza:
+- Consumo de API REST
+- Lazy Loading
+- Componentes, Pipe, Directivas, Servicios, Interfaces y Guardianes
+- FormControl y librerías como Validators para los formularios
+- Creación propia de validaciones
+- Creación de un propio pipe
+- Observadores con Rxjs
+- Input y Outputs
+- Angular Material
+- Responsive Design
+- Creación de rutas y utilizando routerLink y routerActive
+- Cuenta con un Inicio de sesión y Registro en Firebase
+- Almacenamiento de imagenes en Firebase
 
-## Build
+Que tiene implementado:
+- Vista de todos los productos registrados con toda su información detallada en otra página
+- Añadir productos al carrito
+- Obtener, crear, actualizar y eliminar productos 
+- Inicio de sesión y registro para acceder a la página administrativa
+- Obtener los datos del producto al momento de editar su información
+- Bloqueo a la página administrativa si no ha iniciado sesión
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Ideas por concluir el proyecto:
+- Realizar pagos por el carrito
+- Añadir y obtener información o datos personales en el carrito
+- Perfil de usuario no administrativo
 
-## Running unit tests
+## Proyectos Vinculados
+Proyecto realizado con la parte backend llamada <a href="https://github.com/JeanHaro/back-apistore">**back_apistore**</a>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
