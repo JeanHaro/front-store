@@ -7,7 +7,6 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductsComponent } from './components/products/products.component';
 
 // Modulos
-import { SharedModule } from '../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -23,7 +22,6 @@ import { MaterialModule } from '../material/material.module';
   // El routing se importa
   imports: [
     CommonModule,
-    SharedModule,
     ProductsRoutingModule,
     FontAwesomeModule,
     MaterialModule
